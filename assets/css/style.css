@@ -1,0 +1,142 @@
+header {
+  padding: 8px 16px;
+  width: fit-content;
+
+  .header__logo-wrapp {
+    background-color: rgba(18, 105, 228, 0.4);
+    border-radius: 32px;
+    padding: 8px 32px;
+    padding-top: 12px;
+
+    img {
+      display: block;
+      width: 150px;
+      height: auto;
+      border-radius: 32px;
+    }
+  }
+}
+
+.banner {
+  padding-top: 84px;
+  padding-bottom: 64px;
+
+  .banner__hero-cat {
+    width: 560px;
+    height: auto;
+  }
+
+  .banner__left__top__right {
+    gap: 5px;
+  }
+
+  .banner__left__top__right__card {
+    padding: 20px 15px 15px;
+    background-color: #fff;
+    border: 1px solid black;
+    font-family: "Montserrat", sans-serif;
+    max-width: 130px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      font-weight: 600;
+    }
+
+    .number-wrapp.flex-row {
+      align-items: end;
+      justify-content: center;
+
+      span {
+        margin-bottom: 5px;
+        margin-left: 3px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .banner__left__top__right__card__content {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+
+  .banner__left__top__right__card__content.heart {
+    margin-top: -5px;
+  }
+
+  .banner__left__bottom {
+    padding-top: 10px;
+  }
+
+  .banner__left__bottom__left,
+  .banner__left__bottom__right,
+  .banner__left__bottom {
+    gap: 10px;
+  }
+
+  .banner__left__bottom__left,
+  .banner__left__bottom__right {
+    align-items: center;
+  }
+
+  .banner__left__bottom__right {
+    justify-content: space-between;
+
+    .preview__img {
+        height:565px;
+        width: 380px;
+    }
+  }
+
+  .banner__right__reviews {
+    font-size: 14px;
+
+    span {
+        margin-top: 3px;
+        margin-left: 5px;
+        font-weight: 500;
+    }
+  }
+
+  .banner__right {
+    h1 {
+        margin-top: 20px;
+    }
+
+    .banner__right__swiper {
+      position: relative;
+      overflow: hidden;
+      width: 570px;
+      max-width: 100%;
+      margin: 0;
+      margin-top: 15px;
+      margin-bottom: 25px;
+    }
+
+    .banner__right__swiper__track {
+      display: flex;
+      flex-direction: row;
+      transition: transform 0.4s ease;
+      will-change: transform;
+      gap: 0;
+    }
+
+    .banner__right__swiper__feedback {
+      border: 1px solid blue;
+      padding: 8px 32px;
+      border-radius: 10px;
+      box-sizing: border-box;
+      min-width: 570px;
+      width: 570px;
+      margin: 0;
+    }
+
+    .banner__right__swiper__feedback__author {
+        font-weight: 700;
+        font-size: 16px;
+        margin-top: 15px;
+    }
+  }
+}

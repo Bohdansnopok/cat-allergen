@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Domine", serif;
+  background-color: #faf4f3;
+  color: #0f294d;
+}
+
+.container {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.flex-row {
+  display: flex;
+}
+
+.flex-row-start {
+  display: flex;
+  align-items: start;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+button {
+  background: none;
+  border: none;
+}

@@ -1,11 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/media.css">
+    <title>Cat allergen neutralizing</title>
 </head>
+
 <body>
-    
+    <header class="header">
+        <div class="header__logo-wrapp">
+            <img src="./assets/img/logo.svg" alt="" class="logo">
+        </div>
+    </header>
+
+    <section class="banner">
+        <div class="container flex-row-start">
+            <div class="banner__left">
+                <div class="banner__left__top flex-row-start">
+                    <img src="./assets/img/herocat.png" alt="" class="banner__hero-cat">
+                    <div class="banner__left__top__right flex-col">
+                        <div class="banner__left__top__right__card">
+                            <div class="banner__left__top__right__card__number">
+                                <div class="number-wrapp flex-row">
+                                    <h1>60</h1>
+                                    <span class="banner__left__top__right__card__number_subtitle">днів</span>
+                                </div>
+                                <div class="banner__left__top__right__card__content">гарантія повернення грошей</div>
+                            </div>
+                        </div>
+                        <div class="banner__left__top__right__card">
+                            <div class="banner__left__top__right__card__number">
+                                <div class="number-wrapp flex-row">
+                                    <h1>98%</h1>
+                                </div>
+                                <div class="banner__left__top__right__card__content">98% котячих алергенів
+                                    нейтралізовано</div>
+                            </div>
+                        </div>
+                        <div class="banner__left__top__right__card">
+                            <div class="banner__left__top__right__card__number">
+                                <div class="number-wrapp flex-row">
+                                    <svg width="65" height="65" viewBox="150 90 110 150"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M233.105 196.843H217.1V192.434C217.1 179.227 222.254 173.496 228.798 166.239C229.324 165.646 229.883 165.036 230.46 164.391C236.343 157.796 239.378 149.285 238.988 140.401C238.242 123.124 224.119 108.967 206.842 108.17C197.5 107.729 188.65 111.052 181.919 117.478C175.171 123.921 171.458 132.602 171.458 141.91C171.458 150.167 174.459 158.101 179.918 164.273C180.579 165.019 181.207 165.714 181.8 166.392C188.26 173.598 193.363 179.295 193.363 192.417V196.826H177.358V192.417C177.358 185.415 175.629 183.482 169.881 177.073C169.254 176.378 168.609 175.649 167.931 174.886C159.878 165.782 155.453 154.083 155.453 141.91C155.453 128.176 160.929 115.393 170.864 105.898C180.8 96.4205 193.838 91.5545 207.588 92.1818C233.054 93.3517 253.891 114.223 254.993 139.706C255.553 152.761 251.094 165.307 242.413 175.039C241.819 175.7 241.243 176.344 240.7 176.955C234.732 183.584 233.122 185.364 233.122 192.417V196.826L233.105 196.843Z"
+                                            fill="#0F294D" />
+
+                                        <path d="M233.597 201.522H176.833V211.373H233.597V201.522Z" fill="#0F294D" />
+                                        <path d="M227.087 216.289H183.361V226.14H227.087V216.289Z" fill="#0F294D" />
+
+                                        <path
+                                            d="M201.706 163.476C201.706 163.476 198.518 159.119 191.872 152.557C185.158 145.945 180.055 143.283 180.055 143.283L188.464 134.28C188.464 134.28 192.432 136.315 195.585 139.316C197.026 140.706 201.163 144.979 201.163 144.979C205.893 140.231 212.082 134.416 223.781 129.16L233.563 137.315C217.813 144.385 205.91 157.966 205.826 158.084L201.689 163.459L201.706 163.476Z"
+                                            fill="#0F294D" />
+                                    </svg>
+                                </div>
+                                <div class="banner__left__top__right__card__content">Підтверджено наукою</div>
+                            </div>
+                        </div>
+                        <div class="banner__left__top__right__card">
+                            <div class="banner__left__top__right__card__number">
+                                <div class="number-wrapp flex-row">
+                                    <h1>-62%</h1>
+                                </div>
+                                <div class="banner__left__top__right__card__content">На 62% менше пластику</div>
+                            </div>
+                        </div>
+                        <div class="banner__left__top__right__card">
+                            <div class="banner__left__top__right__card__number">
+                                <div class="number-wrapp flex-row">
+                                    <svg width="65" height="65" viewBox="130 80 170 160"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <!-- plus -->
+                                        <path
+                                            d="M152.286 138.981H169.7V123.088H185.592V105.658H169.7V89.7817H152.286V105.658H136.393V123.088H152.286V138.981Z"
+                                            fill="#0F294D" />
+
+                                        <!-- heart -->
+                                        <path
+                                            d="M210.69 202.847C209.611 203.812 208.826 203.583 207.861 202.733C199.964 195.685 192.034 188.655 184.104 181.64C175.585 174.103 167.001 166.647 158.564 159.044C154.787 155.643 150.732 152.536 147.396 148.661H175.618C177.809 150.607 180.016 152.536 182.207 154.498C190.709 162.036 199.244 169.557 207.698 177.127C208.908 178.223 209.742 178.239 210.952 177.16C217.852 171.012 224.801 164.946 231.717 158.815C239.434 151.964 247.136 145.08 254.869 138.213C259.791 133.847 262.227 128.37 262.424 121.846C262.669 111.365 255.017 101.44 243.571 99.7722C231.439 98.0063 219.617 107.392 219.045 119.638C218.947 121.535 218.211 122.091 216.429 122.058C211.851 121.976 207.256 122.042 202.662 122.042C200.111 122.042 199.931 121.944 199.67 119.36C198.836 111.398 194.732 105.675 187.783 101.898C185.706 100.77 183.499 99.9358 181.242 99.6251V80.5274C191.216 81.3613 199.735 85.3673 206.831 92.5125C207.142 92.8232 207.502 93.1175 207.763 93.4772C208.777 94.8344 209.66 94.818 210.837 93.5262C215.448 88.4575 221.04 84.8277 227.498 82.555C232.747 80.7074 238.192 80.0696 243.718 80.5438C256.652 81.6556 268.784 90.1744 275.766 100.884C282.813 111.692 281.963 125.819 276.322 137.085C275.831 138.049 275.308 138.998 274.736 139.93C273.656 141.663 272.381 143.281 270.828 144.622"
+                                            fill="#0F294D" />
+                                    </svg>
+                                </div>
+                                <div class="banner__left__top__right__card__content heart">Рекомендовано лікарями та
+                                    ветеринарами
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="banner__left__bottom flex-row">
+                    <div class="banner__left__bottom__left flex-col">
+                        <img src="./assets/img/relief.png" alt="" height="310" width="310">
+                        <img src="./assets/img/feedbacks.png" alt="" height="310" width="310">
+                        <img src="./assets/img/how-to-use.png" alt="" height="310" width="310">
+                    </div>
+                    <div class="banner__left__bottom__right flex-col">
+                        <button>
+                            <img src="./assets/img/amandas_story_preview.png" alt="" class="preview__img">
+                        </button>
+
+                        <img src="./assets/img/science.png" alt="" height="380" width="380">
+                    </div>
+                </div>
+            </div>
+
+            <div class="banner__right">
+                <div class="banner__right__reviews flex-row">
+                    <div class="banner__right__reviews__stars flex-row">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#1E5DB6"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2L14.9 8.26L22 9.27L17 14.14L18.18 21L12 17.77L5.82 21L7 14.14L2 9.27L9.1 8.26L12 2Z" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#1E5DB6"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2L14.9 8.26L22 9.27L17 14.14L18.18 21L12 17.77L5.82 21L7 14.14L2 9.27L9.1 8.26L12 2Z" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#1E5DB6"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2L14.9 8.26L22 9.27L17 14.14L18.18 21L12 17.77L5.82 21L7 14.14L2 9.27L9.1 8.26L12 2Z" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#1E5DB6"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2L14.9 8.26L22 9.27L17 14.14L18.18 21L12 17.77L5.82 21L7 14.14L2 9.27L9.1 8.26L12 2Z" />
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="half">
+                                    <stop offset="50%" stop-color="#1E5DB6" />
+                                    <stop offset="50%" stop-color="white" />
+                                </linearGradient>
+                            </defs>
+
+                            <path
+                                d="M12 2L14.9 8.26L22 9.27L17 14.14L18.18 21L12 17.77L5.82 21L7 14.14L2 9.27L9.1 8.26L12 2Z"
+                                fill="url(#half)" stroke="#1E5DB6" stroke-width="1" />
+                        </svg>
+
+                    </div>
+
+                    <span>816 відгуків</span>
+                </div>
+
+                <h1>Спрей для нейтралізації алергенів у котів</h1>
+
+                <div class="banner__right__swiper">
+                    <div class="banner__right__swiper__feedback">
+                        <div class="banner__right__swiper__feedback__content">
+                            "As someone whose cat allergy worsened very suddenly, I am so grateful for a solution that
+                            allows me to love my cats"
+                        </div>
+
+                        <div class="banner__right__swiper__feedback__author">
+                            - Eri N., Verified Customer
+                        </div>
+                    </div>
+                    <div class="banner__right__swiper__feedback">
+                        <div class="banner__right__swiper__feedback__content">
+                            "Your spray combined with the food additive have worked a miracle cure on my husband's
+                            allergy symptoms!"
+                        </div>
+
+                        <div class="banner__right__swiper__feedback__author">
+                            - Arthur L., Verified Customer
+                        </div>
+                    </div>
+                    <div class="banner__right__swiper__feedback">
+                        <div class="banner__right__swiper__feedback__content">
+                            "Allergy symptoms relieved immediately! I am now seriously considering letting my cat in my
+                            bed"
+                        </div>
+
+                        <div class="banner__right__swiper__feedback__author">
+                            - Ella D., Verified Customer
+                        </div>
+                    </div>
+                    <div class="banner__right__swiper__feedback">
+                        <div class="banner__right__swiper__feedback__content">
+                            "Noticed results within the first week. Has made being around our new kittens so much fun
+                            without itchy eyes"
+                        </div>
+
+                        <div class="banner__right__swiper__feedback__author">
+                            - Justin D., Verified Customer
+                        </div>
+                    </div>
+                    <div class="banner__right__swiper__feedback">
+                        <div class="banner__right__swiper__feedback__content">
+                            "My allergy symptoms were gone within one day!"
+                        </div>
+
+                        <div class="banner__right__swiper__feedback__author">
+                            - Clare C., Verified Customer
+                        </div>
+                    </div>
+                    <div class="banner__right__swiper__feedback">
+                        <div class="banner__right__swiper__feedback__content">
+                            "Pacagen has worked wonders on my cat allergy"
+                        </div>
+
+                        <div class="banner__right__swiper__feedback__author">
+                            - Cheryl R., Verified Customer
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./assets/js/main.js"></script>
 </body>
+
 </html>
