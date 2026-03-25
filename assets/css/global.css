@@ -18,6 +18,7 @@ body {
 
 .flex-row {
   display: flex;
+  align-items: center;
 }
 
 .flex-row-start {
@@ -38,4 +39,20 @@ h1 {
 button {
   background: none;
   border: none;
+}
+
+.subtitle {
+  font-size: 17px;
+  font-weight: 400;
+  strong {
+    font-weight: 600;
+  }
+}
+
+h4, h5 {
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 14px;
 }

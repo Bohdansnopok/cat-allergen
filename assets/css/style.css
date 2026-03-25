@@ -1,5 +1,5 @@
 header {
-  padding: 8px 16px;
+  padding: 16px;
   width: fit-content;
 
   .header__logo-wrapp {
@@ -20,10 +20,19 @@ header {
 .banner {
   padding-top: 84px;
   padding-bottom: 64px;
+  max-height: 1000px;
+
+  .container {
+    gap: 20px;
+  }
 
   .banner__hero-cat {
     width: 560px;
     height: auto;
+  }
+
+  .banner__left__top {
+    justify-content: space-between;
   }
 
   .banner__left__top__right {
@@ -40,6 +49,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: auto;
 
     h1 {
       font-weight: 600;
@@ -85,8 +95,8 @@ header {
     justify-content: space-between;
 
     .preview__img {
-        height:565px;
-        width: 380px;
+      height: 565px;
+      width: 380px;
     }
   }
 
@@ -94,15 +104,18 @@ header {
     font-size: 14px;
 
     span {
-        margin-top: 3px;
-        margin-left: 5px;
-        font-weight: 500;
+      margin-top: 3px;
+      margin-left: 5px;
+      font-weight: 500;
     }
   }
 
   .banner__right {
+    overflow: scroll;
+    max-height: 1710px;
+
     h1 {
-        margin-top: 20px;
+      margin-top: 20px;
     }
 
     .banner__right__swiper {
@@ -113,6 +126,7 @@ header {
       margin: 0;
       margin-top: 15px;
       margin-bottom: 25px;
+      user-select: none;
     }
 
     .banner__right__swiper__track {
@@ -134,9 +148,257 @@ header {
     }
 
     .banner__right__swiper__feedback__author {
-        font-weight: 700;
-        font-size: 16px;
-        margin-top: 15px;
+      font-weight: 700;
+      font-size: 16px;
+      margin-top: 15px;
+    }
+  }
+
+  .subtitle {
+    margin-bottom: 30px;
+  }
+
+  .banner__right__choose-product {
+    background-color: #044eb7;
+    padding: 12px;
+    color: white;
+    border-radius: 16px;
+  }
+
+  .banner__right__choose-product__top-line {
+    gap: 15px;
+    margin-bottom: 10px;
+
+    h3 {
+      font-weight: 600;
+    }
+  }
+
+  .banner__right__choose-product__pack {
+    margin-bottom: 15px;
+    background: linear-gradient(to bottom, #4a90e2, #1e5db6, #044eb7);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    border: 1px solid black;
+  }
+
+  .banner__right__choose-product__pack__top-line {
+    border-bottom: 1px solid black;
+    padding: 8px 15px;
+
+    .wrapp.flex-row {
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    h4 {
+      margin-bottom: 5px;
+    }
+
+    .banner__right__choose-product__pack__top-line__pack-subtitle {
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+
+  .banner__right__choose-product__pack__top-line__circle.active {
+    background-color: #efdbef;
+    border-radius: 50%;
+  }
+
+  .banner__right__choose-product__pack__top-line__circle {
+    background-color: white;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+
+  .banner__right__choose-product__pack__top-line__discount {
+    font-size: 14px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 16px;
+  }
+
+  .banner__right__choose-product__pack__top-line__discount {
+    gap: 5px;
+    padding: 5px 15px;
+    color: #044eb7;
+    font-weight: 600;
+    width: 100%;
+    max-width: 100px;
+
+    p {
+      font-weight: 500;
+    }
+  }
+
+  .banner__right__choose-product__pack__top-line__price {
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    gap: 5px;
+    padding: 5px 10px;
+    max-width: 110px;
+    width: 100%;
+
+    p {
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+
+  .banner__right__choose-product__pack__content {
+    padding: 10px 15px;
+    gap: 10px;
+    position: relative;
+
+    .features {
+      gap: 10px;
+
+      .flex-row-start {
+        gap: 5px;
+        font-size: 14px;
+
+        svg {
+          flex-shrink: 0;
+        }
+      }
+    }
+
+    .shipment {
+      background-color: #fff;
+      padding: 5px 0;
+      max-width: 205px;
+      border-radius: 16px;
+      align-items: center;
+
+      h5 {
+        background-color: #0f294d;
+        max-width: 154px;
+        border-radius: 40px;
+        padding: 2px 25px;
+      }
+    }
+
+    .every-four-weeks {
+      h5 {
+        padding: 2px 15px;
+      }
+    }
+  }
+
+  .x2-image-wrapp {
+    position: relative;
+  }
+
+  .x2 {
+    position: absolute;
+    background-color: #0f294d;
+    font-size: 16px;
+    border-radius: 50%;
+    right: 10px;
+    top: 15px;
+  }
+
+  .banner__right__choose-product__pack.two-month {
+    .shipment,
+    .banner__right__choose-product__pack__top-line__discount {
+      background-color: #ffd380;
+    }
+  }
+
+  .banner__right__choose-product__pack.six-month {
+    .shipment,
+    .banner__right__choose-product__pack__top-line__discount {
+      background-color: #bbf9b5;
+    }
+  }
+
+  .banner__right__choose-product__submit {
+    width: 100%;
+    background-color: #0f294d;
+    border-radius: 64px;
+    color: white;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.3s;
+    padding: 5px;
+  }
+
+  .banner__right__choose-product__submit:hover {
+    background-color: darkmagenta;
+  }
+
+  .banner__right__your-pack {
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-image: url("https://cdn.shopify.com/s/files/1/0814/8369/4394/files/bg-logos.png?v=1762881530");
+  }
+
+  .banner__right__your-pack__info {
+    background-color: #044eb7;
+    padding: 10px 20px 20px 20px;
+    width: 100%;
+    color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 80px;
+
+    h4 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+  }
+
+  .banner__right__accordions {
+    margin-top: 35px;
+    gap: 15px;
+  }
+
+  .banner__right__accordions__accordion {
+    padding: 15px 0;
+    border-bottom: 1px solid lightgray;
+
+    .text-content {
+      font-size: 16px;
+      font-weight: 200;
+      color: #0f294d;
+    }
+  }
+
+  .banner__right__accordions__accordion__question {
+    font-size: 20px;
+    font-weight: 600;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  .banner__right__accordions__accordion__answer.flex-row {
+    gap: 30px;
+  }
+
+  .banner__right__accordions__accordion__answer.flex-row-start {
+    padding-bottom: 30px;
+
+    .flex-col {
+      gap: 15px;
+      height: 460px;
+
+      .text-content {
+        width: 142px;
+      }
+    }
+  }
+
+  .banner__right__accordions__accordion__answer__item {
+    color: black;
+
+    h3 {
+      font-size: 18px;
+      margin-bottom: 15px;
     }
   }
 }
