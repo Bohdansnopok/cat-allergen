@@ -7,7 +7,7 @@
 body {
   font-family: "Domine", serif;
   background-color: #faf4f3;
-  color: #0f294d;
+  color: black;
 }
 
 .container {
@@ -34,6 +34,10 @@ body {
 h1 {
   font-size: 36px;
   font-weight: 700;
+}
+
+h2 {
+  font-size: 24px;
 }
 
 button {
