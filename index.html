@@ -938,15 +938,15 @@
                         <h2>Оформлення замовлення</h2>
                     </div>
 
-                    <form class="cart-modal__form">
+                    <form class="cart-modal__form" id="cart-modal-form">
                         <label class="cart-modal__field">
                             <span>Ім’я</span>
-                            <input type="text" placeholder="Введіть ваше ім’я">
+                            <input type="text" name="first_name" placeholder="Введіть ваше ім’я">
                         </label>
 
                         <label class="cart-modal__field">
                             <span>Номер телефону</span>
-                            <input type="tel" placeholder="+38">
+                            <input type="tel" name="phone" placeholder="+38">
                         </label>
                     </form>
 
@@ -971,7 +971,7 @@
                             <strong data-cart-summary-total>1850 грн</strong>
                         </div>
 
-                        <button class="cart-modal__confirm" type="button">Підтвердити замовлення</button>
+                        <button class="cart-modal__confirm" type="submit" form="cart-modal-form">Підтвердити замовлення</button>
                     </div>
                 </div>
             </div>
@@ -2260,6 +2260,7 @@
 
 
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/phone_validator.js"></script>
 </body>
 
 </html>
