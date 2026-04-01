@@ -29,7 +29,40 @@
             <div class="banner__left">
                 <div class="banner__left__top flex-row-start">
                     <div class="banner__hero-cat-wrap">
-                        <img src="./assets/img/herocat.png" alt="" class="banner__hero-cat" width="573" height="675">
+                        <img src="./assets/img/herocat.png" alt="" class="banner__hero-cat banner__img" width="573"
+                            height="675" id="hero-image">
+                    </div>
+                    <!-- Mobile Slider -->
+                    <div class="mobile-slider" id="mobile-slider">
+                        <div class="slider-main">
+                            <img src="./assets/img/herocat.png" alt="" class="slider-main-img" id="slider-main-img">
+                        </div>
+                        <div class="slider-thumbnails">
+                            <button class="slider-arrow slider-arrow--left" id="slider-prev">&lt;</button>
+                            <div class="thumbnails-container">
+                                <img src="./assets/img/herocat.png" alt="" class="thumbnail active"
+                                    data-src="./assets/img/herocat.png">
+                                <img src="./assets/img/relief.png" alt="" class="thumbnail"
+                                    data-src="./assets/img/relief.png">
+                                <img src="./assets/img/feedbacks.png" alt="" class="thumbnail"
+                                    data-src="./assets/img/feedbacks.png">
+                                <img src="./assets/img/how-to-use.png" alt="" class="thumbnail"
+                                    data-src="./assets/img/how-to-use.png">
+                                <img src="./assets/img/amandas_story_preview.png" alt="" class="thumbnail"
+                                    data-src="./assets/img/amandas_story_preview.png">
+                                <img src="./assets/img/science.png" alt="" class="thumbnail"
+                                    data-src="./assets/img/science.png">
+                            </div>
+                            <button class="slider-arrow slider-arrow--right" id="slider-next">&gt;</button>
+                        </div>
+                        <div class="slider-dots">
+                            <span class="dot active" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                            <span class="dot" data-index="3"></span>
+                            <span class="dot" data-index="4"></span>
+                            <span class="dot" data-index="5"></span>
+                        </div>
                     </div>
                     <div class="banner__left__top__right flex-col">
                         <div class="banner__left__top__right__card">
@@ -104,14 +137,14 @@
 
                 <div class="banner__left__bottom flex-row">
                     <div class="banner__left__bottom__left flex-col">
-                        <img src="./assets/img/relief.png" alt="" height="310" width="310">
-                        <img src="./assets/img/feedbacks.png" alt="" height="310" width="310">
-                        <img src="./assets/img/how-to-use.png" alt="" height="310" width="310">
+                        <img src="./assets/img/relief.png" alt="" height="310" width="310" class="banner__img">
+                        <img src="./assets/img/feedbacks.png" alt="" height="310" width="310" class="banner__img">
+                        <img src="./assets/img/how-to-use.png" alt="" height="310" width="310" class="banner__img">
                     </div>
                     <div class="banner__left__bottom__right flex-col">
                         <button type="button" class="preview-trigger" aria-haspopup="dialog"
                             aria-controls="story-modal">
-                            <img src="./assets/img/amandas_story_preview.png" alt="" class="preview__img">
+                            <img src="./assets/img/amandas_story_preview.png" alt="" class="preview__img banner__img">
                             <span class="preview-trigger__icon" aria-hidden="true">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
                                     fill="currentColor">
@@ -120,7 +153,7 @@
                             </span>
                         </button>
 
-                        <img src="./assets/img/science.png" alt="" height="380" width="380">
+                        <img src="./assets/img/science.png" alt="" height="380" width="380" class="banner__img">
                     </div>
                 </div>
             </div>
@@ -991,7 +1024,7 @@
     </div>
 
     <section class="clinican-reviewed">
-        <div class="container">
+        <div class="container container-center">
             <div class="clinican-reviewed__top-line flex-row">
                 <hr>
                 <span class="header--laurels-left">
@@ -1285,7 +1318,7 @@
     </section>
 
     <section class="product-benefits">
-        <div class="small-container ">
+        <div class="small-container container-center">
             <div class="product-benefits__inner flex-row-start">
                 <div class="product-benefits__content">
                     <h1>Усе, що вам потрібно.<br>Нічого зайвого.</h1>
@@ -1326,104 +1359,240 @@
     </section>
 
     <section class="product-comparison">
-        <div class="small-container ">
+        <div class="small-container container-center">
             <div class="product-comparison__inner">
-                <div class="product-comparison__head flex-col">
-                    <h1>Домашній спрей, який перевершує інші</h1>
-                    <p>Як pettiko виглядає на фоні інших:</p>
+                <div class="product-comparison__desktop">
+                    <div class="product-comparison__head flex-col">
+                        <h1>Домашній спрей, який перевершує інші</h1>
+                        <p>Як pettiko виглядає на фоні інших:</p>
+                    </div>
+
+                    <div class="product-comparison__table">
+                        <div class="product-comparison__highlight" aria-hidden="true"></div>
+
+                        <div class="product-comparison__line product-comparison__line--header">
+                            <div class="product-comparison__cell flex-row product-comparison__cell--feature"></div>
+
+                            <div class="product-comparison__cell flex-row product-comparison__cell--product">
+                                <img src="./assets/img/pacagen-spray.png" alt="pettiko spray" width="68" height="112">
+                            </div>
+
+                            <div
+                                class="product-comparison__cell flex-row flex-col product-comparison__cell--competitor">
+                                <img src="./assets/img/antihistamines.svg" alt="" height="64" width="64">
+                                <span>Антигістамінні</span>
+                            </div>
+
+                            <div
+                                class="product-comparison__cell flex-row flex-col product-comparison__cell--competitor">
+                                <img src="./assets/img/allergy-shot.png" alt="" width="64" height="64">
+                                <span>Уколи від алергії</span>
+                            </div>
+                        </div>
+
+                        <div class="product-comparison__line">
+                            <div class="product-comparison__cell flex-row product-comparison__cell--feature">
+                                Впливає на джерело алергенів
+                            </div>
+
+                            <div class="product-comparison__cell flex-row product-comparison__cell--product-value">
+                                <img src="./assets/img/check-mark.png" alt="">
+                            </div>
+
+                            <div class="product-comparison__cell flex-row product-comparison__cell--value">
+                                Лише маскують симптоми
+                            </div>
+
+                            <div class="product-comparison__cell flex-row product-comparison__cell--value">
+                                Десенсибілізують імунну<br>систему
+                            </div>
+                        </div>
+
+                        <div class="product-comparison__line">
+                            <div class="product-comparison__cell flex-row product-comparison__cell--feature">
+                                Без ліків і неінвазивно
+                            </div>
+
+                            <div class="product-comparison__cell flex-row product-comparison__cell--product-value">
+                                <img src="./assets/img/check-mark.png" alt="">
+                            </div>
+
+                            <div class="product-comparison__cell flex-row product-comparison__cell--value">
+                                Можуть викликати побічні ефекти
+                            </div>
+
+                            <div class="product-comparison__cell flex-row product-comparison__cell--value">
+                                Дуже інвазивно
+                            </div>
+                        </div>
+
+                        <div class="product-comparison__line">
+                            <div class="product-comparison__cell flex-row product-comparison__cell--feature">
+                                Швидке зменшення кількості алергенів
+                            </div>
+
+                            <div class="product-comparison__cell flex-row product-comparison__cell--product-value">
+                                <img src="./assets/img/check-mark.png" alt="">
+                            </div>
+
+                            <div class="product-comparison__cell flex-row product-comparison__cell--value">
+                                Тимчасове полегшення симптомів,<br>алергени залишаються в середовищі
+                            </div>
+
+                            <div class="product-comparison__cell flex-row product-comparison__cell--value">
+                                Результат може з'явитися лише через<br>роки
+                            </div>
+                        </div>
+
+                        <div class="product-comparison__line">
+                            <div class="product-comparison__cell flex-row product-comparison__cell--feature">
+                                Простота використання
+                            </div>
+
+                            <div class="product-comparison__cell flex-row product-comparison__cell--product-value">
+                                <img src="./assets/img/check-mark.png" alt="">
+                            </div>
+
+                            <div class="product-comparison__cell flex-row product-comparison__cell--value">
+                                Потрібен щоденний прийом
+                            </div>
+
+                            <div class="product-comparison__cell flex-row product-comparison__cell--value">
+                                Потрібні постійні ін'єкції
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="product-comparison__table">
-                    <div class="product-comparison__highlight" aria-hidden="true"></div>
+                <div class="product-comparison-mobile" data-product-comparison-mobile>
+                    <div class="product-comparison-mobile__head flex-col">
+                        <h1>Домашній спрей, який перевершує інші</h1>
+                        <p>Як pettiko виглядає на фоні інших:</p>
+                    </div>
 
-                    <div class="product-comparison__line product-comparison__line--header">
-                        <div class="product-comparison__cell flex-row product-comparison__cell--feature"></div>
+                    <div class="product-comparison-mobile__viewport">
+                        <div class="product-comparison-mobile__highlight" aria-hidden="true"></div>
 
-                        <div class="product-comparison__cell flex-row product-comparison__cell--product">
-                            <img src="./assets/img/pacagen-spray.png" alt="pettiko spray" width="68" height="112">
+                        <div class="product-comparison-mobile__slide is-active" data-product-comparison-slide>
+                            <div class="product-comparison-mobile__row product-comparison-mobile__row--header">
+                                <div class="product-comparison-mobile__cell product-comparison-mobile__cell--feature">
+                                </div>
+                                <div class="product-comparison-mobile__cell product-comparison-mobile__cell--product">
+                                    <img src="./assets/img/pacagen-spray.png" alt="Спрей pettiko" width="68"
+                                        height="112">
+                                </div>
+                                <div
+                                    class="product-comparison-mobile__cell product-comparison-mobile__cell--competitor">
+                                    <img src="./assets/img/antihistamines.svg" alt="Антигістамінні" width="64"
+                                        height="64">
+                                    <span>Антигістамінні</span>
+                                </div>
+                            </div>
+
+                            <div class="product-comparison-mobile__row">
+                                <div class="product-comparison-mobile__cell product-comparison-mobile__cell--feature">
+                                    Впливає на джерело алергенів</div>
+                                <div
+                                    class="product-comparison-mobile__cell product-comparison-mobile__cell--product-value">
+                                    <img src="./assets/img/check-mark.png" alt=""></div>
+                                <div class="product-comparison-mobile__cell product-comparison-mobile__cell--value">Лише
+                                    маскують симптоми</div>
+                            </div>
+
+                            <div class="product-comparison-mobile__row">
+                                <div class="product-comparison-mobile__cell product-comparison-mobile__cell--feature">
+                                    Без ліків і неінвазивно</div>
+                                <div
+                                    class="product-comparison-mobile__cell product-comparison-mobile__cell--product-value">
+                                    <img src="./assets/img/check-mark.png" alt=""></div>
+                                <div class="product-comparison-mobile__cell product-comparison-mobile__cell--value">
+                                    Можуть викликати побічні ефекти</div>
+                            </div>
+
+                            <div class="product-comparison-mobile__row">
+                                <div class="product-comparison-mobile__cell product-comparison-mobile__cell--feature">
+                                    Швидке зменшення кількості алергенів</div>
+                                <div
+                                    class="product-comparison-mobile__cell product-comparison-mobile__cell--product-value">
+                                    <img src="./assets/img/check-mark.png" alt=""></div>
+                                <div class="product-comparison-mobile__cell product-comparison-mobile__cell--value">
+                                    Тимчасове полегшення симптомів, алергени залишаються в середовищі</div>
+                            </div>
+
+                            <div class="product-comparison-mobile__row">
+                                <div class="product-comparison-mobile__cell product-comparison-mobile__cell--feature">
+                                    Простота використання</div>
+                                <div
+                                    class="product-comparison-mobile__cell product-comparison-mobile__cell--product-value">
+                                    <img src="./assets/img/check-mark.png" alt=""></div>
+                                <div class="product-comparison-mobile__cell product-comparison-mobile__cell--value">
+                                    Потрібен щоденний прийом</div>
+                            </div>
                         </div>
 
-                        <div class="product-comparison__cell flex-row flex-col product-comparison__cell--competitor">
-                            <img src="./assets/img/antihistamines.svg" alt="" height="64" width="64">
-                            <span>Антигістамінні</span>
-                        </div>
+                        <div class="product-comparison-mobile__slide" data-product-comparison-slide>
+                            <div class="product-comparison-mobile__row product-comparison-mobile__row--header">
+                                <div class="product-comparison-mobile__cell product-comparison-mobile__cell--feature">
+                                </div>
+                                <div class="product-comparison-mobile__cell product-comparison-mobile__cell--product">
+                                    <img src="./assets/img/pacagen-spray.png" alt="Спрей pettiko" width="68"
+                                        height="112">
+                                </div>
+                                <div
+                                    class="product-comparison-mobile__cell product-comparison-mobile__cell--competitor">
+                                    <img src="./assets/img/allergy-shot.png" alt="Уколи від алергії" width="64"
+                                        height="64">
+                                    <span>Уколи від алергії</span>
+                                </div>
+                            </div>
 
-                        <div class="product-comparison__cell flex-row flex-col product-comparison__cell--competitor">
-                            <img src="./assets/img/allergy-shot.png" alt="" width="64" height="64">
-                            <span>Уколи від алергії</span>
+                            <div class="product-comparison-mobile__row">
+                                <div class="product-comparison-mobile__cell product-comparison-mobile__cell--feature">
+                                    Впливає на джерело алергенів</div>
+                                <div
+                                    class="product-comparison-mobile__cell product-comparison-mobile__cell--product-value">
+                                    <img src="./assets/img/check-mark.png" alt=""></div>
+                                <div class="product-comparison-mobile__cell product-comparison-mobile__cell--value">
+                                    Десенсибілізують імунну систему</div>
+                            </div>
+
+                            <div class="product-comparison-mobile__row">
+                                <div class="product-comparison-mobile__cell product-comparison-mobile__cell--feature">
+                                    Без ліків і неінвазивно</div>
+                                <div
+                                    class="product-comparison-mobile__cell product-comparison-mobile__cell--product-value">
+                                    <img src="./assets/img/check-mark.png" alt=""></div>
+                                <div class="product-comparison-mobile__cell product-comparison-mobile__cell--value">Дуже
+                                    інвазивно</div>
+                            </div>
+
+                            <div class="product-comparison-mobile__row">
+                                <div class="product-comparison-mobile__cell product-comparison-mobile__cell--feature">
+                                    Швидке зменшення кількості алергенів</div>
+                                <div
+                                    class="product-comparison-mobile__cell product-comparison-mobile__cell--product-value">
+                                    <img src="./assets/img/check-mark.png" alt=""></div>
+                                <div class="product-comparison-mobile__cell product-comparison-mobile__cell--value">
+                                    Результат може з'явитися лише через роки</div>
+                            </div>
+
+                            <div class="product-comparison-mobile__row">
+                                <div class="product-comparison-mobile__cell product-comparison-mobile__cell--feature">
+                                    Простота використання</div>
+                                <div
+                                    class="product-comparison-mobile__cell product-comparison-mobile__cell--product-value">
+                                    <img src="./assets/img/check-mark.png" alt=""></div>
+                                <div class="product-comparison-mobile__cell product-comparison-mobile__cell--value">
+                                    Потрібні постійні ін'єкції</div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="product-comparison__line">
-                        <div class="product-comparison__cell flex-row product-comparison__cell--feature">
-                            Впливає на джерело алергенів
-                        </div>
-
-                        <div class="product-comparison__cell flex-row product-comparison__cell--product-value">
-                            <img src="./assets/img/check-mark.png" alt="">
-                        </div>
-
-                        <div class="product-comparison__cell flex-row product-comparison__cell--value">
-                            Лише маскують симптоми
-                        </div>
-
-                        <div class="product-comparison__cell flex-row product-comparison__cell--value">
-                            Десенсибілізують імунну<br>систему
-                        </div>
-                    </div>
-
-                    <div class="product-comparison__line">
-                        <div class="product-comparison__cell flex-row product-comparison__cell--feature">
-                            Без ліків і неінвазивно
-                        </div>
-
-                        <div class="product-comparison__cell flex-row product-comparison__cell--product-value">
-                            <img src="./assets/img/check-mark.png" alt="">
-                        </div>
-
-                        <div class="product-comparison__cell flex-row product-comparison__cell--value">
-                            Можуть викликати побічні ефекти
-                        </div>
-
-                        <div class="product-comparison__cell flex-row product-comparison__cell--value">
-                            Дуже інвазивно
-                        </div>
-                    </div>
-
-                    <div class="product-comparison__line">
-                        <div class="product-comparison__cell flex-row product-comparison__cell--feature">
-                            Швидке зменшення кількості алергенів
-                        </div>
-
-                        <div class="product-comparison__cell flex-row product-comparison__cell--product-value">
-                            <img src="./assets/img/check-mark.png" alt="">
-                        </div>
-
-                        <div class="product-comparison__cell flex-row product-comparison__cell--value">
-                            Тимчасове полегшення симптомів,<br>алергени залишаються в середовищі
-                        </div>
-
-                        <div class="product-comparison__cell flex-row product-comparison__cell--value">
-                            Результат може з'явитися лише через<br>роки
-                        </div>
-                    </div>
-
-                    <div class="product-comparison__line">
-                        <div class="product-comparison__cell flex-row product-comparison__cell--feature">
-                            Простота використання
-                        </div>
-
-                        <div class="product-comparison__cell flex-row product-comparison__cell--product-value">
-                            <img src="./assets/img/check-mark.png" alt="">
-                        </div>
-
-                        <div class="product-comparison__cell flex-row product-comparison__cell--value">
-                            Потрібен щоденний прийом
-                        </div>
-
-                        <div class="product-comparison__cell flex-row product-comparison__cell--value">
-                            Потрібні постійні ін'єкції
-                        </div>
+                    <div class="product-comparison-mobile__nav flex-row">
+                        <button class="product-comparison-mobile__arrow" type="button"
+                            data-product-comparison-mobile-prev aria-label="Попереднє порівняння">&#8249;</button>
+                        <button class="product-comparison-mobile__arrow" type="button"
+                            data-product-comparison-mobile-next aria-label="Наступне порівняння">&#8250;</button>
                     </div>
                 </div>
             </div>
@@ -1431,9 +1600,11 @@
     </section>
 
     <section class="community-carousel">
-        <div class="container">
+        <div class="container container-center">
             <div class="community-carousel__inner flex-col">
-                <h1>Ось що говорить спільнота pettiko</h1>
+                <div class="community-carousel__head">
+                    <h1>Ось що говорить <br /> спільнота pettiko</h1>
+                </div>
 
                 <div class="community-carousel__viewport" data-community-carousel>
                     <div class="community-carousel__shadow community-carousel__shadow--left" aria-hidden="true"></div>
@@ -1494,9 +1665,11 @@
     </section>
 
     <section class="review-slider">
-        <div class="small-container ">
+        <div class="small-container container-center">
             <div class="review-slider__inner flex-col">
-                <h1>pettiko впливає на молекули алергенів, які викликають ці симптоми:</h1>
+                <div class="review-slider__head">
+                    <h1>pettiko впливає на молекули алергенів, які викликають ці симптоми:</h1>
+                </div>
 
                 <div class="review-slider__accordion">
                     <div class="review-slider__item is-open">
@@ -1722,7 +1895,7 @@
     </section>
 
     <section class="leaders-tabs">
-        <div class="container">
+        <div class="container container-center">
             <div class="leaders-tabs__inner">
                 <h1>Лідери у сфері здоров'я рекомендують pettiko</h1>
 
@@ -1785,7 +1958,7 @@
 
 
     <section class="comfort-benefits">
-        <div class="container">
+        <div class="container container-center">
             <div class="comfort-benefits__card">
                 <div class="comfort-benefits__top flex-row">
                     <div class="comfort-benefits__copy">
@@ -1803,9 +1976,10 @@
                     </div>
                 </div>
 
-                <div class="comfort-benefits__items flex-row">
-                    <div class="comfort-benefits__item flex-col">
-                        <div class="comfort-benefits__badge comfort-benefits__badge--molecule">
+                <div class="comfort-benefits__items-wrap">
+                    <div class="comfort-benefits__items flex-row" data-comfort-slider>
+                        <div class="comfort-benefits__item flex-col" data-comfort-slide>
+                            <div class="comfort-benefits__badge comfort-benefits__badge--molecule">
                             <svg width="228" height="77" viewBox="0 0 228 77" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_1477_863)">
@@ -1842,21 +2016,21 @@
                                     </clipPath>
                                 </defs>
                             </svg>
+                            </div>
+                            <p>Містить наш інженерний інгредієнт, створений розпізнавати котячі алергени та розкладати їх.
+                            </p>
                         </div>
-                        <p>Містить наш інженерний інгредієнт, створений розпізнавати котячі алергени та розкладати їх.
-                        </p>
-                    </div>
 
-                    <div class="comfort-benefits__item flex-col">
-                        <div class="comfort-benefits__badge comfort-benefits__badge--spray">
+                        <div class="comfort-benefits__item flex-col" data-comfort-slide>
+                            <div class="comfort-benefits__badge comfort-benefits__badge--spray">
                             <img src="https://cdn.shopify.com/s/files/1/0814/8369/4394/files/catspray_white2.png?v=1763070729"
                                 alt="Spray icon" loading="lazy">
+                            </div>
+                            <p>Легко розпилюється на дивани, килими, лежанки тварин або просто в повітря.</p>
                         </div>
-                        <p>Легко розпилюється на дивани, килими, лежанки тварин або просто в повітря.</p>
-                    </div>
 
-                    <div class="comfort-benefits__item flex-col">
-                        <div class="comfort-benefits__badge comfort-benefits__badge--safe">
+                        <div class="comfort-benefits__item flex-col" data-comfort-slide>
+                            <div class="comfort-benefits__badge comfort-benefits__badge--safe">
                             <svg width="146" height="151" viewBox="0 0 146 151" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -1899,9 +2073,16 @@
                                 <ellipse cx="138.5" cy="19" rx="6.5" ry="7" fill="white"></ellipse>
                                 <circle cx="8.5" cy="22.5" r="8.5" fill="white"></circle>
                             </svg>
+                            </div>
+                            <p>Без сонливості, сухості в роті, запаморочення та без довгострокового навантаження на імунну
+                                систему.</p>
                         </div>
-                        <p>Без сонливості, сухості в роті, запаморочення та без довгострокового навантаження на імунну
-                            систему.</p>
+                    </div>
+
+                    <div class="comfort-benefits__dots" data-comfort-dots>
+                        <button class="comfort-benefits__dot is-active" type="button" aria-label="Показати перший пункт"></button>
+                        <button class="comfort-benefits__dot" type="button" aria-label="Показати другий пункт"></button>
+                        <button class="comfort-benefits__dot" type="button" aria-label="Показати третій пункт"></button>
                     </div>
                 </div>
             </div>
@@ -1909,7 +2090,7 @@
     </section>
 
     <section class="relief-journey">
-        <div class="relief-journey__inner">
+        <div class="relief-journey__inner container-center">
 
             <div>
                 <div class="relief-journey__intro">
@@ -2058,7 +2239,7 @@
     </section>
 
     <section class="impact-stats" data-impact-stats>
-        <div class="container">
+        <div class="container container-center">
             <div class="impact-stats__grid">
                 <div class="impact-stats__circle impact-stats__circle--light" data-stat-circle>
                     <div class="impact-stats__value"><span data-count-to="97">0</span>%</div>
@@ -2143,7 +2324,7 @@
     </section>
 
     <section class="customer-reviews-list">
-        <div class="small-container ">
+        <div class="small-container container-center">
             <div class="customer-reviews-list__inner flex-col" data-reviews-pagination>
                 <div class="customer-reviews-list__summary">
                     <h2>Customer Reviews</h2>

@@ -1,3 +1,8 @@
+html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +13,17 @@ body {
   font-family: "Montserrat", sans-serif;
   background-color: #faf4f3;
   color: black;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+header,
+section,
+footer,
+main {
+  width: 100%;
+  margin-inline: auto;
 }
 
 body.is-page-locked {
@@ -28,6 +44,12 @@ body.is-page-locked {
   width: 100%;
   margin: 0 auto;
 }
+
+.container-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} 
 
 .flex-row {
   display: flex;
