@@ -128,7 +128,7 @@ function initBannerRightScrollGate() {
   const compactViewport = window.matchMedia('(max-width: 800px)');
 
   if (!banner || !rightColumn || compactViewport.matches) return;
-  let capturedScrollDirection = 0;
+  let isGateEngaged = false;
 
   const canScrollRightColumn = (deltaY) => {
     const maxScrollTop = rightColumn.scrollHeight - rightColumn.clientHeight;
@@ -154,22 +154,24 @@ function initBannerRightScrollGate() {
     const bannerTop = banner.offsetTop;
     const bannerHeight = banner.offsetHeight;
     const viewportMidpoint = window.scrollY + window.innerHeight / 2;
-    const centerZoneStart = bannerTop + bannerHeight * 0.45;
-    const centerZoneEnd = bannerTop + bannerHeight * 0.55;
+    const centerZoneStart = bannerTop + bannerHeight * 0.38;
+    const centerZoneEnd = bannerTop + bannerHeight * 0.62;
 
     return viewportMidpoint >= centerZoneStart && viewportMidpoint <= centerZoneEnd;
   };
 
   const syncGate = () => {
     if (compactViewport.matches) {
-      capturedScrollDirection = 0;
+      isGateEngaged = false;
       rightColumn.classList.remove('is-scroll-locked');
       return;
     }
 
-    const isUnlocked = isBannerInView() && (isInBannerCenterZone() || capturedScrollDirection !== 0);
+    if (!isBannerInView()) {
+      isGateEngaged = false;
+    }
 
-    rightColumn.classList.toggle('is-scroll-locked', !isUnlocked);
+    rightColumn.classList.toggle('is-scroll-locked', !isGateEngaged);
   };
 
   syncGate();
@@ -178,35 +180,35 @@ function initBannerRightScrollGate() {
 
   window.addEventListener('wheel', (event) => {
     if (compactViewport.matches) {
-      capturedScrollDirection = 0;
+      isGateEngaged = false;
       rightColumn.classList.remove('is-scroll-locked');
       return;
     }
 
     if (!isBannerInView()) {
-      capturedScrollDirection = 0;
+      isGateEngaged = false;
       syncGate();
       return;
     }
 
     const nextDirection = Math.sign(event.deltaY);
-    const isContinuingCapturedScroll =
-      capturedScrollDirection !== 0 && nextDirection === capturedScrollDirection;
-    const canCaptureNow = isInBannerCenterZone() || isContinuingCapturedScroll;
+    if (nextDirection === 0) return;
 
-    if (!canCaptureNow) {
-      capturedScrollDirection = 0;
+    const canScrollNow = canScrollRightColumn(event.deltaY);
+    const shouldEngageNow = isInBannerCenterZone() && canScrollNow;
+
+    if (!isGateEngaged && !shouldEngageNow) {
       syncGate();
       return;
     }
 
-    if (!canScrollRightColumn(event.deltaY)) {
-      capturedScrollDirection = 0;
+    if (!canScrollNow) {
+      isGateEngaged = false;
       syncGate();
       return;
     }
 
-    capturedScrollDirection = nextDirection;
+    isGateEngaged = true;
     rightColumn.scrollTop += event.deltaY;
     syncGate();
     event.preventDefault();
@@ -818,12 +820,56 @@ function initDiscoverTabs() {
   const tabs = Array.from(document.querySelectorAll('[data-discover-tabs] .discover-whisker__tab'));
   const panels = Array.from(document.querySelectorAll('[data-discover-panels] .discover-whisker__text'));
   const images = Array.from(document.querySelectorAll('[data-discover-panels] .discover-whisker__image'));
-  if (tabs.length === 0 || panels.length === 0) return;
+  const contentContainer = document.querySelector('[data-discover-panels]');
+  const section = document.querySelector('.discover-whisker');
+  const enableDropdownAnimation = section?.classList.contains('discover-whisker--animated');
 
-  const setActiveTab = (index) => {
+  if (tabs.length === 0 || panels.length === 0 || !contentContainer) return;
+
+  const moveContentUnderTab = (tab) => {
+    if (window.innerWidth <= 800) {
+      tab.insertAdjacentElement('afterend', contentContainer);
+    } else {
+      const card = tab.closest('.discover-whisker__card');
+      if (card && !card.contains(contentContainer)) {
+        card.appendChild(contentContainer);
+      }
+    }
+  };
+
+  const animatePanelOpenFromTab = (panel, tab) => {
+    if (!panel?.animate || !tab) return;
+
+    const tabRect = tab.getBoundingClientRect();
+    const panelRect = panel.getBoundingClientRect();
+    const yOffset = tabRect.bottom - panelRect.top;
+
+    panel.animate([
+      { transform: `translateY(${yOffset}px) scaleY(0.9)`, opacity: 0 },
+      { transform: 'translateY(0) scaleY(1)', opacity: 1 }
+    ], {
+      duration: 280,
+      easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+      fill: 'forwards'
+    });
+  };
+
+  const setActiveTab = (index, animate = true) => {
+    const selectedTab = tabs[index];
+    if (!selectedTab) return;
+
     tabs.forEach((tab, tabIndex) => tab.classList.toggle('is-active', tabIndex === index));
     panels.forEach((panel, panelIndex) => panel.classList.toggle('is-active', panelIndex === index));
     images.forEach((image, imageIndex) => image.classList.toggle('is-active', imageIndex === index));
+
+    moveContentUnderTab(selectedTab);
+
+    if (enableDropdownAnimation && animate) {
+      const selectedPanel = panels[index];
+      if (selectedPanel) {
+        requestAnimationFrame(() => animatePanelOpenFromTab(selectedPanel, selectedTab));
+      }
+    }
   };
 
   tabs.forEach((tab, index) => {
@@ -831,7 +877,9 @@ function initDiscoverTabs() {
   });
 
   const defaultIndex = Math.max(0, tabs.findIndex((tab) => tab.classList.contains('is-active')));
-  setActiveTab(defaultIndex);
+  setActiveTab(defaultIndex, false);
+
+  window.addEventListener('resize', () => setActiveTab(tabs.findIndex((tab) => tab.classList.contains('is-active'))));
 }
 
 function initLeaderTabs() {
@@ -1076,6 +1124,16 @@ function initMobileSlider() {
     currentIndex = index;
     const selectedThumb = thumbnails[currentIndex];
     mainImg.src = selectedThumb.dataset.src;
+    mainImg.dataset.variant = selectedThumb.dataset.variant || 'default';
+    const fitMode = selectedThumb.dataset.fit || 'cover';
+    const objectPosition = selectedThumb.dataset.position || 'center center';
+    const scale = selectedThumb.dataset.scale || '1';
+    mainImg.classList.toggle('is-contain', fitMode === 'contain');
+    mainImg.classList.toggle('is-cover', fitMode !== 'contain');
+    mainImg.style.objectFit = fitMode;
+    mainImg.style.objectPosition = objectPosition;
+    mainImg.style.setProperty('--slider-main-scale', scale);
+    mainImg.style.transform = `scale(${scale})`;
     thumbnails.forEach((thumb, i) => {
       thumb.classList.toggle('active', i === currentIndex);
     });

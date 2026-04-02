@@ -38,30 +38,37 @@
                             <img src="./assets/img/herocat.png" alt="" class="slider-main-img" id="slider-main-img">
                         </div>
                         <div class="slider-thumbnails">
-                            <button class="slider-arrow slider-arrow--left" id="slider-prev">&lt;</button>
                             <div class="thumbnails-container">
                                 <img src="./assets/img/herocat.png" alt="" class="thumbnail active"
-                                    data-src="./assets/img/herocat.png">
+                                    data-src="./assets/img/herocat.png" data-fit="contain" data-position="center center"
+                                    data-scale="1">
                                 <img src="./assets/img/relief.png" alt="" class="thumbnail"
-                                    data-src="./assets/img/relief.png">
+                                    data-src="./assets/img/relief.png" data-fit="contain" data-position="center top"
+                                    data-scale="1">
                                 <img src="./assets/img/feedbacks.png" alt="" class="thumbnail"
-                                    data-src="./assets/img/feedbacks.png">
+                                    data-src="./assets/img/feedbacks.png" data-fit="contain"
+                                    data-position="center center" data-scale="1">
                                 <img src="./assets/img/how-to-use.png" alt="" class="thumbnail"
-                                    data-src="./assets/img/how-to-use.png">
+                                    data-src="./assets/img/how-to-use.png" data-fit="cover" data-position="54% 0%"
+                                    data-scale="1.18" data-variant="how-to-use">
                                 <img src="./assets/img/amandas_story_preview.png" alt="" class="thumbnail"
-                                    data-src="./assets/img/amandas_story_preview.png">
+                                    data-src="./assets/img/amandas_story_preview.png" data-fit="cover"
+                                    data-position="50% 0%" data-scale="1.34" data-variant="amanda-story">
                                 <img src="./assets/img/science.png" alt="" class="thumbnail"
-                                    data-src="./assets/img/science.png">
+                                    data-src="./assets/img/science.png" data-fit="cover" data-position="42% 0%"
+                                    data-scale="1.32" data-variant="science">
                             </div>
-                            <button class="slider-arrow slider-arrow--right" id="slider-next">&gt;</button>
                         </div>
                         <div class="slider-dots">
+                            <button class="slider-arrow slider-arrow--left" id="slider-prev">&lt;</button>
                             <span class="dot active" data-index="0"></span>
                             <span class="dot" data-index="1"></span>
                             <span class="dot" data-index="2"></span>
                             <span class="dot" data-index="3"></span>
                             <span class="dot" data-index="4"></span>
                             <span class="dot" data-index="5"></span>
+                            <button class="slider-arrow slider-arrow--right" id="slider-next">&gt;</button>
+
                         </div>
                     </div>
                     <div class="banner__left__top__right flex-col">
@@ -355,16 +362,19 @@
                                         aria-hidden="true">
                                         <circle cx="12" cy="12" r="10"></circle>
                                     </svg>
-                                    <div>
-                                        <h4>Стартовий пакет</h4>
-                                        <p class="banner__right__choose-product__pack__top-line__pack-subtitle">Вітаємо,
-                                            ви
-                                            заощаджуєте 450 грн!</p>
-                                    </div>
+                                    <div class="banner__right__choose-product__pack__top-line__meta flex-col">
+                                        <div>
+                                            <h4>Стартовий пакет</h4>
+                                            <p class="banner__right__choose-product__pack__top-line__pack-subtitle">
+                                                Вітаємо,
+                                                ви
+                                                заощаджуєте 450 грн!</p>
+                                        </div>
 
-                                    <div class="banner__right__choose-product__pack__top-line__discount flex-col">
-                                        -20%
-                                        <p>-450 грн</p>
+                                        <div class="banner__right__choose-product__pack__top-line__discount flex-col">
+                                            -20%
+                                            <p>-450 грн</p>
+                                        </div>
                                     </div>
 
                                     <div class="banner__right__choose-product__pack__top-line__price flex-col">
@@ -433,15 +443,17 @@
                                         aria-hidden="true">
                                         <circle cx="12" cy="12" r="10"></circle>
                                     </svg>
-                                    <div>
-                                        <h4>Подвійний пакет</h4>
-                                        <p class="banner__right__choose-product__pack__top-line__pack-subtitle">
-                                            2-місячний запас, що постачається кожні 8 тижнів</p>
-                                    </div>
+                                    <div class="banner__right__choose-product__pack__top-line__meta flex-col">
+                                        <div>
+                                            <h4>Подвійний пакет</h4>
+                                            <p class="banner__right__choose-product__pack__top-line__pack-subtitle">
+                                                2-місячний запас, що постачається кожні 8 тижнів</p>
+                                        </div>
 
-                                    <div class="banner__right__choose-product__pack__top-line__discount flex-col">
-                                        -28%
-                                        <p>-1300 грн</p>
+                                        <div class="banner__right__choose-product__pack__top-line__discount flex-col">
+                                            -28%
+                                            <p>-1300 грн</p>
+                                        </div>
                                     </div>
 
                                     <div class="banner__right__choose-product__pack__top-line__price flex-col">
@@ -528,16 +540,18 @@
                                         aria-hidden="true">
                                         <circle cx="12" cy="12" r="10"></circle>
                                     </svg>
-                                    <div>
-                                        <h4>Пакет запасів</h4>
-                                        <p class="banner__right__choose-product__pack__top-line__pack-subtitle">
-                                            6-місячний запас, що постачається кожні 24 тижнів
-                                        </p>
-                                    </div>
+                                    <div class="banner__right__choose-product__pack__top-line__meta flex-col">
+                                        <div>
+                                            <h4>Пакет запасів</h4>
+                                            <p class="banner__right__choose-product__pack__top-line__pack-subtitle">
+                                                6-місячний запас, що постачається кожні 24 тижнів
+                                            </p>
+                                        </div>
 
-                                    <div class="banner__right__choose-product__pack__top-line__discount flex-col">
-                                        -32%
-                                        <p>-4465 грн</p>
+                                        <div class="banner__right__choose-product__pack__top-line__discount flex-col">
+                                            -32%
+                                            <p>-4465 грн</p>
+                                        </div>
                                     </div>
 
                                     <div class="banner__right__choose-product__pack__top-line__price flex-col">
@@ -1494,7 +1508,8 @@
                                     Впливає на джерело алергенів</div>
                                 <div
                                     class="product-comparison-mobile__cell product-comparison-mobile__cell--product-value">
-                                    <img src="./assets/img/check-mark.png" alt=""></div>
+                                    <img src="./assets/img/check-mark.png" alt="">
+                                </div>
                                 <div class="product-comparison-mobile__cell product-comparison-mobile__cell--value">Лише
                                     маскують симптоми</div>
                             </div>
@@ -1504,7 +1519,8 @@
                                     Без ліків і неінвазивно</div>
                                 <div
                                     class="product-comparison-mobile__cell product-comparison-mobile__cell--product-value">
-                                    <img src="./assets/img/check-mark.png" alt=""></div>
+                                    <img src="./assets/img/check-mark.png" alt="">
+                                </div>
                                 <div class="product-comparison-mobile__cell product-comparison-mobile__cell--value">
                                     Можуть викликати побічні ефекти</div>
                             </div>
@@ -1514,7 +1530,8 @@
                                     Швидке зменшення кількості алергенів</div>
                                 <div
                                     class="product-comparison-mobile__cell product-comparison-mobile__cell--product-value">
-                                    <img src="./assets/img/check-mark.png" alt=""></div>
+                                    <img src="./assets/img/check-mark.png" alt="">
+                                </div>
                                 <div class="product-comparison-mobile__cell product-comparison-mobile__cell--value">
                                     Тимчасове полегшення симптомів, алергени залишаються в середовищі</div>
                             </div>
@@ -1524,7 +1541,8 @@
                                     Простота використання</div>
                                 <div
                                     class="product-comparison-mobile__cell product-comparison-mobile__cell--product-value">
-                                    <img src="./assets/img/check-mark.png" alt=""></div>
+                                    <img src="./assets/img/check-mark.png" alt="">
+                                </div>
                                 <div class="product-comparison-mobile__cell product-comparison-mobile__cell--value">
                                     Потрібен щоденний прийом</div>
                             </div>
@@ -1551,7 +1569,8 @@
                                     Впливає на джерело алергенів</div>
                                 <div
                                     class="product-comparison-mobile__cell product-comparison-mobile__cell--product-value">
-                                    <img src="./assets/img/check-mark.png" alt=""></div>
+                                    <img src="./assets/img/check-mark.png" alt="">
+                                </div>
                                 <div class="product-comparison-mobile__cell product-comparison-mobile__cell--value">
                                     Десенсибілізують імунну систему</div>
                             </div>
@@ -1561,7 +1580,8 @@
                                     Без ліків і неінвазивно</div>
                                 <div
                                     class="product-comparison-mobile__cell product-comparison-mobile__cell--product-value">
-                                    <img src="./assets/img/check-mark.png" alt=""></div>
+                                    <img src="./assets/img/check-mark.png" alt="">
+                                </div>
                                 <div class="product-comparison-mobile__cell product-comparison-mobile__cell--value">Дуже
                                     інвазивно</div>
                             </div>
@@ -1571,7 +1591,8 @@
                                     Швидке зменшення кількості алергенів</div>
                                 <div
                                     class="product-comparison-mobile__cell product-comparison-mobile__cell--product-value">
-                                    <img src="./assets/img/check-mark.png" alt=""></div>
+                                    <img src="./assets/img/check-mark.png" alt="">
+                                </div>
                                 <div class="product-comparison-mobile__cell product-comparison-mobile__cell--value">
                                     Результат може з'явитися лише через роки</div>
                             </div>
@@ -1581,7 +1602,8 @@
                                     Простота використання</div>
                                 <div
                                     class="product-comparison-mobile__cell product-comparison-mobile__cell--product-value">
-                                    <img src="./assets/img/check-mark.png" alt=""></div>
+                                    <img src="./assets/img/check-mark.png" alt="">
+                                </div>
                                 <div class="product-comparison-mobile__cell product-comparison-mobile__cell--value">
                                     Потрібні постійні ін'єкції</div>
                             </div>
@@ -1601,64 +1623,62 @@
 
     <section class="community-carousel">
         <div class="container container-center">
-            <div class="community-carousel__inner flex-col">
-                <div class="community-carousel__head">
-                    <h1>Ось що говорить <br /> спільнота pettiko</h1>
-                </div>
+            <div class="community-carousel__head">
+                <h1>Ось що говорить <br /> спільнота pettiko</h1>
+            </div>
 
-                <div class="community-carousel__viewport" data-community-carousel>
-                    <div class="community-carousel__shadow community-carousel__shadow--left" aria-hidden="true"></div>
-                    <div class="community-carousel__shadow community-carousel__shadow--right" aria-hidden="true"></div>
+            <div class="community-carousel__viewport" data-community-carousel>
+                <div class="community-carousel__shadow community-carousel__shadow--left" aria-hidden="true"></div>
+                <div class="community-carousel__shadow community-carousel__shadow--right" aria-hidden="true"></div>
 
-                    <div class="community-carousel__track flex-row">
-                        <article class="community-carousel__slide">
-                            <video class="community-carousel__video" autoplay muted loop playsinline preload="metadata">
-                                <source src="./assets/video/slidevideo1.mp4" type="video/mp4">
-                            </video>
-                        </article>
+                <div class="community-carousel__track flex-row">
+                    <article class="community-carousel__slide">
+                        <video class="community-carousel__video" autoplay muted loop playsinline preload="metadata">
+                            <source src="./assets/video/slidevideo1.mp4" type="video/mp4">
+                        </video>
+                    </article>
 
-                        <article class="community-carousel__slide">
-                            <video class="community-carousel__video" autoplay muted loop playsinline preload="metadata">
-                                <source src="./assets/video/slidevideo2.mp4" type="video/mp4">
-                            </video>
-                        </article>
+                    <article class="community-carousel__slide">
+                        <video class="community-carousel__video" autoplay muted loop playsinline preload="metadata">
+                            <source src="./assets/video/slidevideo2.mp4" type="video/mp4">
+                        </video>
+                    </article>
 
-                        <article class="community-carousel__slide">
-                            <video class="community-carousel__video" autoplay muted loop playsinline preload="metadata">
-                                <source src="./assets/video/slidevideo3.mp4" type="video/mp4">
-                            </video>
-                        </article>
+                    <article class="community-carousel__slide">
+                        <video class="community-carousel__video" autoplay muted loop playsinline preload="metadata">
+                            <source src="./assets/video/slidevideo3.mp4" type="video/mp4">
+                        </video>
+                    </article>
 
-                        <article class="community-carousel__slide">
-                            <video class="community-carousel__video" autoplay muted loop playsinline preload="metadata">
-                                <source src="./assets/video/slidevideo4.mp4" type="video/mp4">
-                            </video>
-                        </article>
+                    <article class="community-carousel__slide">
+                        <video class="community-carousel__video" autoplay muted loop playsinline preload="metadata">
+                            <source src="./assets/video/slidevideo4.mp4" type="video/mp4">
+                        </video>
+                    </article>
 
-                        <article class="community-carousel__slide">
-                            <video class="community-carousel__video" autoplay muted loop playsinline preload="metadata">
-                                <source src="./assets/video/slidevideo5.mp4" type="video/mp4">
-                            </video>
-                        </article>
+                    <article class="community-carousel__slide">
+                        <video class="community-carousel__video" autoplay muted loop playsinline preload="metadata">
+                            <source src="./assets/video/slidevideo5.mp4" type="video/mp4">
+                        </video>
+                    </article>
 
-                        <article class="community-carousel__slide">
-                            <video class="community-carousel__video" autoplay muted loop playsinline preload="metadata">
-                                <source src="./assets/video/slidevideo6.mp4" type="video/mp4">
-                            </video>
-                        </article>
+                    <article class="community-carousel__slide">
+                        <video class="community-carousel__video" autoplay muted loop playsinline preload="metadata">
+                            <source src="./assets/video/slidevideo6.mp4" type="video/mp4">
+                        </video>
+                    </article>
 
-                        <article class="community-carousel__slide">
-                            <video class="community-carousel__video" autoplay muted loop playsinline preload="metadata">
-                                <source src="./assets/video/slidevideo7.mp4" type="video/mp4">
-                            </video>
-                        </article>
+                    <article class="community-carousel__slide">
+                        <video class="community-carousel__video" autoplay muted loop playsinline preload="metadata">
+                            <source src="./assets/video/slidevideo7.mp4" type="video/mp4">
+                        </video>
+                    </article>
 
-                        <article class="community-carousel__slide">
-                            <video class="community-carousel__video" autoplay muted loop playsinline preload="metadata">
-                                <source src="./assets/video/slidevideo8.mp4" type="video/mp4">
-                            </video>
-                        </article>
-                    </div>
+                    <article class="community-carousel__slide">
+                        <video class="community-carousel__video" autoplay muted loop playsinline preload="metadata">
+                            <source src="./assets/video/slidevideo8.mp4" type="video/mp4">
+                        </video>
+                    </article>
                 </div>
             </div>
         </div>
@@ -1896,60 +1916,58 @@
 
     <section class="leaders-tabs">
         <div class="container container-center">
-            <div class="leaders-tabs__inner">
-                <h1>Лідери у сфері здоров'я рекомендують pettiko</h1>
+            <h1>Лідери у сфері здоров'я рекомендують pettiko</h1>
 
-                <div class="leaders-tabs__nav flex-row" data-leader-tabs>
-                    <button class="leaders-tabs__nav-item is-active" type="button">Олег Мельник</button>
-                    <button class="leaders-tabs__nav-item" type="button">Андрій Коваль</button>
-                    <button class="leaders-tabs__nav-item" type="button">Катерина Шевченко</button>
-                    <button class="leaders-tabs__nav-item" type="button">Видання WIRED</button>
+            <div class="leaders-tabs__nav flex-row" data-leader-tabs>
+                <button class="leaders-tabs__nav-item is-active" type="button">Олег Мельник</button>
+                <button class="leaders-tabs__nav-item" type="button">Андрій Коваль</button>
+                <button class="leaders-tabs__nav-item" type="button">Катерина Шевченко</button>
+                <button class="leaders-tabs__nav-item" type="button">Видання WIRED</button>
+            </div>
+
+            <div class="leaders-tabs__panels" data-leader-panels>
+                <div class="leaders-tabs__panel is-active flex-row-start">
+                    <div class="leaders-tabs__photo">
+                        <img src="./assets/img/basil.jpg" alt="Д-р Василь Кахваш">
+                    </div>
+                    <div class="leaders-tabs__quote">
+                        <blockquote>«Технологія pettiko змінює правила гри для людей з алергією: завдяки
+                            націлюванню на котячий луп і його зменшенню вона дає проактивний підхід до симптомів, а
+                            не просто замінює їх медикаментами.»</blockquote>
+                        <p>Олег Мельник, доктор медицини, сертифікований алерголог</p>
+                    </div>
                 </div>
-
-                <div class="leaders-tabs__panels" data-leader-panels>
-                    <div class="leaders-tabs__panel is-active flex-row-start">
-                        <div class="leaders-tabs__photo">
-                            <img src="./assets/img/basil.jpg" alt="Д-р Василь Кахваш">
-                        </div>
-                        <div class="leaders-tabs__quote">
-                            <blockquote>«Технологія pettiko змінює правила гри для людей з алергією: завдяки
-                                націлюванню на котячий луп і його зменшенню вона дає проактивний підхід до симптомів, а
-                                не просто замінює їх медикаментами.»</blockquote>
-                            <p>Олег Мельник, доктор медицини, сертифікований алерголог</p>
-                        </div>
+                <div class="leaders-tabs__panel flex-row-start">
+                    <div class="leaders-tabs__photo">
+                        <img src="./assets/img/andrew.jpg" alt="Д-р Андрій Фіндлейтор">
                     </div>
-                    <div class="leaders-tabs__panel flex-row-start">
-                        <div class="leaders-tabs__photo">
-                            <img src="./assets/img/andrew.jpg" alt="Д-р Андрій Фіндлейтор">
-                        </div>
-                        <div class="leaders-tabs__quote">
-                            <blockquote>«Я рекомендую pettiko своїм пацієнтам, тому що він працює з коренем алергічних
-                                загострень. Це безпечне та ефективне рішення, якому можуть довіряти люди з
-                                алергією.»</blockquote>
-                            <p>Андрій Коваль, ветеринарний лікар, ліцензований ветеринар</p>
-                        </div>
+                    <div class="leaders-tabs__quote">
+                        <blockquote>«Я рекомендую pettiko своїм пацієнтам, тому що він працює з коренем алергічних
+                            загострень. Це безпечне та ефективне рішення, якому можуть довіряти люди з
+                            алергією.»</blockquote>
+                        <p>Андрій Коваль, ветеринарний лікар, ліцензований ветеринар</p>
                     </div>
-                    <div class="leaders-tabs__panel flex-row-start">
-                        <div class="leaders-tabs__photo">
-                            <img src="./assets/img/auri.jpg" alt="Ауріка Катаріна">
-                        </div>
-                        <div class="leaders-tabs__quote">
-                            <blockquote>«Я прибирала сотні домівок, і ніщо не зрівняється з відчуттям по-справжньому
-                                свіжого повітря, особливо для людей, які страждають від алергії! Спрей pettiko не
-                                просто маскує проблему, він буквально нейтралізує алергени, наче магія.»</blockquote>
-                            <p>Катерина Шевченко, експертка з прибирання, 5 млн підписників</p>
-                        </div>
+                </div>
+                <div class="leaders-tabs__panel flex-row-start">
+                    <div class="leaders-tabs__photo">
+                        <img src="./assets/img/auri.jpg" alt="Ауріка Катаріна">
                     </div>
-                    <div class="leaders-tabs__panel flex-row-start">
-                        <div class="leaders-tabs__photo">
-                            <img src="./assets/img/wired.png" alt="Логотип WIRED">
-                        </div>
-                        <div class="leaders-tabs__quote">
-                            <blockquote>«Багато людей захоплюються цією антитіловою добавкою, яку можна безпосередньо
-                                додавати до корму як топер. Брендом, який мені радили найчастіше, став pettiko —
-                                порошкова добавка, яку варто додавати до їжі або давати двічі на день.»</blockquote>
-                            <p>WIRED, 9 млн+ підписників на X</p>
-                        </div>
+                    <div class="leaders-tabs__quote">
+                        <blockquote>«Я прибирала сотні домівок, і ніщо не зрівняється з відчуттям по-справжньому
+                            свіжого повітря, особливо для людей, які страждають від алергії! Спрей pettiko не
+                            просто маскує проблему, він буквально нейтралізує алергени, наче магія.»</blockquote>
+                        <p>Катерина Шевченко, експертка з прибирання, 5 млн підписників</p>
+                    </div>
+                </div>
+                <div class="leaders-tabs__panel flex-row-start">
+                    <div class="leaders-tabs__photo">
+                        <img src="./assets/img/wired.png" alt="Логотип WIRED">
+                    </div>
+                    <div class="leaders-tabs__quote">
+                        <blockquote>«Багато людей захоплюються цією антитіловою добавкою, яку можна безпосередньо
+                            додавати до корму як топер. Брендом, який мені радили найчастіше, став pettiko —
+                            порошкова добавка, яку варто додавати до їжі або давати двічі на день.»</blockquote>
+                        <p>WIRED, 9 млн+ підписників на X</p>
                     </div>
                 </div>
             </div>
@@ -1980,107 +1998,116 @@
                     <div class="comfort-benefits__items flex-row" data-comfort-slider>
                         <div class="comfort-benefits__item flex-col" data-comfort-slide>
                             <div class="comfort-benefits__badge comfort-benefits__badge--molecule">
-                            <svg width="228" height="77" viewBox="0 0 228 77" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_1477_863)">
-                                    <path
-                                        d="M74.0105 20.0838C79.4698 20.0838 83.8954 15.6583 83.8954 10.199C83.8954 4.73979 79.4698 0.314209 74.0105 0.314209C68.5513 0.314209 64.1257 4.73979 64.1257 10.199C64.1257 15.6583 68.5513 20.0838 74.0105 20.0838Z"
-                                        fill="white" stroke="#2A55A4" stroke-width="0.09" stroke-miterlimit="10"></path>
-                                    <path d="M69.9268 9.02612L137.487 66.7643" stroke="white" stroke-width="0.81"
-                                        stroke-miterlimit="10"></path>
-                                    <path
-                                        d="M143.518 76.7958C148.978 76.7958 153.403 72.3702 153.403 66.9109C153.403 61.4517 148.978 57.0261 143.518 57.0261C138.059 57.0261 133.634 61.4517 133.634 66.9109C133.634 72.3702 138.059 76.7958 143.518 76.7958Z"
-                                        fill="white" stroke="#2A55A4" stroke-width="0.09" stroke-miterlimit="10"></path>
-                                    <path
-                                        d="M218.011 27.4137C223.47 27.4137 227.895 22.9881 227.895 17.5289C227.895 12.0696 223.47 7.64404 218.011 7.64404C212.551 7.64404 208.126 12.0696 208.126 17.5289C208.126 22.9881 212.551 27.4137 218.011 27.4137Z"
-                                        fill="white" stroke="#2A55A4" stroke-width="0.09" stroke-miterlimit="10"></path>
-                                    <path d="M147.581 67.2461L220.942 17.0681" stroke="white" stroke-width="0.81"
-                                        stroke-miterlimit="10"></path>
-                                    <path
-                                        d="M9.96856 19.8534C15.4278 19.8534 19.8534 15.4278 19.8534 9.96856C19.8534 4.50932 15.4278 0.0837402 9.96856 0.0837402C4.50932 0.0837402 0.0837402 4.50932 0.0837402 9.96856C0.0837402 15.4278 4.50932 19.8534 9.96856 19.8534Z"
-                                        fill="white" stroke="#2A55A4" stroke-width="0.09" stroke-miterlimit="10"></path>
-                                    <path d="M4.71216 8.73291L72.2724 66.4711" stroke="white" stroke-width="0.81"
-                                        stroke-miterlimit="10"></path>
-                                    <path
-                                        d="M78.513 76.9005C83.9722 76.9005 88.3978 72.4749 88.3978 67.0157C88.3978 61.5564 83.9722 57.1309 78.513 57.1309C73.0538 57.1309 68.6282 61.5564 68.6282 67.0157C68.6282 72.4749 73.0538 76.9005 78.513 76.9005Z"
-                                        fill="white" stroke="#2A55A4" stroke-width="0.09" stroke-miterlimit="10"></path>
-                                    <path
-                                        d="M153.382 26.9737C158.841 26.9737 163.267 22.5482 163.267 17.0889C163.267 11.6297 158.841 7.2041 153.382 7.2041C147.923 7.2041 143.497 11.6297 143.497 17.0889C143.497 22.5482 147.923 26.9737 153.382 26.9737Z"
-                                        fill="white" stroke="#2A55A4" stroke-width="0.09" stroke-miterlimit="10"></path>
-                                    <path d="M82.3455 66.953L155.728 16.7959" stroke="white" stroke-width="0.81"
-                                        stroke-miterlimit="10"></path>
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_1477_863">
-                                        <rect width="228" height="76.9843" fill="white"></rect>
-                                    </clipPath>
-                                </defs>
-                            </svg>
+                                <svg width="228" height="77" viewBox="0 0 228 77" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_1477_863)">
+                                        <path
+                                            d="M74.0105 20.0838C79.4698 20.0838 83.8954 15.6583 83.8954 10.199C83.8954 4.73979 79.4698 0.314209 74.0105 0.314209C68.5513 0.314209 64.1257 4.73979 64.1257 10.199C64.1257 15.6583 68.5513 20.0838 74.0105 20.0838Z"
+                                            fill="white" stroke="#2A55A4" stroke-width="0.09" stroke-miterlimit="10">
+                                        </path>
+                                        <path d="M69.9268 9.02612L137.487 66.7643" stroke="white" stroke-width="0.81"
+                                            stroke-miterlimit="10"></path>
+                                        <path
+                                            d="M143.518 76.7958C148.978 76.7958 153.403 72.3702 153.403 66.9109C153.403 61.4517 148.978 57.0261 143.518 57.0261C138.059 57.0261 133.634 61.4517 133.634 66.9109C133.634 72.3702 138.059 76.7958 143.518 76.7958Z"
+                                            fill="white" stroke="#2A55A4" stroke-width="0.09" stroke-miterlimit="10">
+                                        </path>
+                                        <path
+                                            d="M218.011 27.4137C223.47 27.4137 227.895 22.9881 227.895 17.5289C227.895 12.0696 223.47 7.64404 218.011 7.64404C212.551 7.64404 208.126 12.0696 208.126 17.5289C208.126 22.9881 212.551 27.4137 218.011 27.4137Z"
+                                            fill="white" stroke="#2A55A4" stroke-width="0.09" stroke-miterlimit="10">
+                                        </path>
+                                        <path d="M147.581 67.2461L220.942 17.0681" stroke="white" stroke-width="0.81"
+                                            stroke-miterlimit="10"></path>
+                                        <path
+                                            d="M9.96856 19.8534C15.4278 19.8534 19.8534 15.4278 19.8534 9.96856C19.8534 4.50932 15.4278 0.0837402 9.96856 0.0837402C4.50932 0.0837402 0.0837402 4.50932 0.0837402 9.96856C0.0837402 15.4278 4.50932 19.8534 9.96856 19.8534Z"
+                                            fill="white" stroke="#2A55A4" stroke-width="0.09" stroke-miterlimit="10">
+                                        </path>
+                                        <path d="M4.71216 8.73291L72.2724 66.4711" stroke="white" stroke-width="0.81"
+                                            stroke-miterlimit="10"></path>
+                                        <path
+                                            d="M78.513 76.9005C83.9722 76.9005 88.3978 72.4749 88.3978 67.0157C88.3978 61.5564 83.9722 57.1309 78.513 57.1309C73.0538 57.1309 68.6282 61.5564 68.6282 67.0157C68.6282 72.4749 73.0538 76.9005 78.513 76.9005Z"
+                                            fill="white" stroke="#2A55A4" stroke-width="0.09" stroke-miterlimit="10">
+                                        </path>
+                                        <path
+                                            d="M153.382 26.9737C158.841 26.9737 163.267 22.5482 163.267 17.0889C163.267 11.6297 158.841 7.2041 153.382 7.2041C147.923 7.2041 143.497 11.6297 143.497 17.0889C143.497 22.5482 147.923 26.9737 153.382 26.9737Z"
+                                            fill="white" stroke="#2A55A4" stroke-width="0.09" stroke-miterlimit="10">
+                                        </path>
+                                        <path d="M82.3455 66.953L155.728 16.7959" stroke="white" stroke-width="0.81"
+                                            stroke-miterlimit="10"></path>
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1477_863">
+                                            <rect width="228" height="76.9843" fill="white"></rect>
+                                        </clipPath>
+                                    </defs>
+                                </svg>
                             </div>
-                            <p>Містить наш інженерний інгредієнт, створений розпізнавати котячі алергени та розкладати їх.
+                            <p>Містить наш інженерний інгредієнт, створений розпізнавати котячі алергени та розкладати
+                                їх.
                             </p>
                         </div>
 
                         <div class="comfort-benefits__item flex-col" data-comfort-slide>
                             <div class="comfort-benefits__badge comfort-benefits__badge--spray">
-                            <img src="https://cdn.shopify.com/s/files/1/0814/8369/4394/files/catspray_white2.png?v=1763070729"
-                                alt="Spray icon" loading="lazy">
+                                <img src="https://cdn.shopify.com/s/files/1/0814/8369/4394/files/catspray_white2.png?v=1763070729"
+                                    alt="Spray icon" loading="lazy">
                             </div>
                             <p>Легко розпилюється на дивани, килими, лежанки тварин або просто в повітря.</p>
                         </div>
 
                         <div class="comfort-benefits__item flex-col" data-comfort-slide>
                             <div class="comfort-benefits__badge comfort-benefits__badge--safe">
-                            <svg width="146" height="151" viewBox="0 0 146 151" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M73.9753 30.9032C73.8199 30.8721 73.6621 30.8721 73.5067 30.9032C56.3136 34.4494 43.7643 43.0555 35.1439 57.2117C35.0315 57.3934 34.9741 57.6015 34.9741 57.8143C34.9741 89.2807 48.2145 111.981 73.258 123.459C73.411 123.531 73.576 123.566 73.741 123.566C73.906 123.566 74.071 123.531 74.224 123.459C99.27 111.981 112.508 89.2831 112.508 57.8143C112.508 57.6015 112.448 57.3934 112.338 57.2117C103.72 43.0555 91.1708 34.4494 73.9753 30.9032ZM73.741 121.132C49.9768 110.027 37.3821 88.2644 37.2936 58.1395C45.5171 44.7916 57.4447 36.635 73.741 33.2203C90.0397 36.6374 101.967 44.7916 110.191 58.1395C110.1 88.2644 97.5076 110.027 73.741 121.132Z"
-                                    fill="white"></path>
-                                <path
-                                    d="M95.009 65.0844H81.6611V51.7365C81.6611 51.098 81.1446 50.5791 80.5037 50.5791H66.9812C66.3404 50.5791 65.8215 51.098 65.8215 51.7365V65.0844H52.4759C51.8351 65.0844 51.3162 65.6033 51.3162 66.2418V79.7643C51.3162 80.4051 51.8351 80.924 52.4759 80.924H65.8215V94.2696C65.8215 94.9104 66.3404 95.4293 66.9812 95.4293H80.5037C81.1446 95.4293 81.6611 94.9104 81.6611 94.2696V80.924H95.009C95.6499 80.924 96.1664 80.4051 96.1664 79.7643V66.2418C96.1664 65.6033 95.6475 65.0844 95.009 65.0844ZM93.8493 78.6069H80.5037C79.8629 78.6069 79.344 79.1234 79.344 79.7643V93.1122H68.1386V79.7643C68.1386 79.1234 67.6197 78.6069 66.9812 78.6069H53.6333V67.4015H66.9812C67.6197 67.4015 68.1386 66.8826 68.1386 66.2442V52.8962H79.344V66.2418C79.344 66.8826 79.8629 67.4015 80.5037 67.4015H93.8493V78.6069Z"
-                                    fill="white"></path>
-                                <path
-                                    d="M130.373 62.1596C128.575 53.8955 124.921 46.0139 119.756 39.2754C120.581 36.5781 122.109 29.3183 120.583 26.5994C119.254 24.2369 116.872 25.1694 115.449 25.7266C113.888 26.3388 113.297 26.4583 112.872 25.9777C112.393 25.4373 113.087 23.7706 113.644 22.4315C114.378 20.6596 115.141 18.8303 114.479 17.3166C114.151 16.5681 113.534 16.0205 112.64 15.6929C108.649 14.2199 99.7748 19.5954 96.9675 21.3984C93.6915 19.9637 90.2696 18.8326 86.7784 18.0292C86.0538 15.614 83.5574 8.28247 79.6381 6.93859C76.6108 5.896 75.1928 8.02421 74.253 9.43266C73.4352 10.6546 73.0933 11.0204 72.5385 10.9344C71.8594 10.8291 71.3429 9.58809 70.8431 8.39007C70.0181 6.40773 68.7651 3.40672 65.3504 4.10257C60.8118 5.02081 57.8563 15.5662 57.0074 19.0096C50.3717 21.0063 44.2118 24.1508 38.6785 28.3642C35.8663 25.8486 26.7557 18.3879 21.9063 22.7615C20.0841 24.4019 18.5609 27.5607 21.6408 33.3045C21.9541 33.8903 22.0115 34.5527 21.8058 35.1744C21.5882 35.8248 21.1148 36.3509 20.4715 36.6498C18.5059 37.5657 17.272 38.8617 16.8057 40.5021C15.7655 44.1679 19.8378 47.4798 21.7843 48.8213C19.3165 53.7974 17.5901 59.0845 16.6431 64.5604C13.501 65.0578 3.91691 67.0425 3.19714 72.8676C2.44868 78.9294 13.2715 82.533 16.4805 83.4632C17.4801 89.9053 19.5437 96.0747 22.6236 101.826C20.5552 103.686 15.151 109.234 18.0468 114.227C21.0861 119.463 29.3096 115.944 31.9399 114.638C34.0777 116.864 36.3996 118.925 38.8602 120.783C37.8272 122.84 35.8544 127.747 39.0084 130.272C42.3825 132.972 47.8154 128.84 49.6854 127.24C53.1025 128.801 56.675 130.028 60.3264 130.894C60.0538 133.474 59.8984 139.744 64.5207 141.284C67.7823 142.372 70.1018 140.076 71.9694 138.235C73.5978 136.628 74.6643 135.667 75.7978 135.961C76.9527 136.252 77.2684 137.051 77.7227 138.44C78.1842 139.851 78.8586 141.91 81.5392 141.908C81.8333 141.908 82.1537 141.884 82.5004 141.831C87.2447 141.097 89.8009 132.627 90.4824 129.999C96.6279 128.151 102.391 125.3 107.623 121.525C110.026 120.702 114.268 119.605 115.921 120.016C116.624 120.188 117.135 120.59 117.728 121.054C118.948 122.013 120.466 123.211 123.666 122.108C126.684 121.068 126.435 117.639 126.232 114.882C126.083 112.833 125.928 110.714 126.877 109.781C127.664 109.007 128.721 109.059 130.376 109.243C132.516 109.475 135.457 109.8 136.691 105.805C138.331 100.496 131.299 94.0947 128.96 92.1482C130.356 87.7651 131.229 83.2145 131.552 78.6018C133.711 77.3177 140.543 72.8413 139.955 67.9058C139.371 63.0253 132.886 62.2696 130.373 62.1596ZM129.876 76.8945C129.52 77.0906 129.302 77.4516 129.276 77.8414C128.986 82.7363 128.056 87.5594 126.509 92.1793C126.351 92.6432 126.507 93.1573 126.894 93.4586C129.4 95.4147 135.648 101.323 134.477 105.123C133.831 107.206 132.891 107.184 130.624 106.938C128.955 106.754 126.877 106.529 125.249 108.127C123.537 109.815 123.74 112.593 123.919 115.049C124.12 117.792 124.151 119.487 122.91 119.918C120.904 120.604 120.249 120.088 119.158 119.231C118.458 118.682 117.661 118.057 116.475 117.763C114.146 117.189 107.819 118.734 106.418 119.571L106.401 119.547C101.169 123.347 95.3797 126.18 89.1935 127.962C88.7894 128.079 88.4809 128.404 88.3877 128.813C87.4814 132.728 84.9826 139.1 82.1441 139.54C80.6568 139.772 80.4583 139.351 79.9227 137.718C79.454 136.291 78.8131 134.332 76.3669 133.713C76.0273 133.627 75.7021 133.589 75.3841 133.589C73.3754 133.589 71.7757 135.167 70.341 136.585C68.361 138.538 67.0339 139.679 65.25 139.086C61.479 137.828 62.7416 130.281 62.7535 130.207C62.8659 129.593 62.4714 129 61.8616 128.866C57.7678 127.976 53.7696 126.618 49.9771 124.822C49.5515 124.621 49.0421 124.7 48.6954 125.023C46.8015 126.781 42.2916 129.937 40.4528 128.462C38.1022 126.582 41.3136 121.109 41.3471 121.054C41.6579 120.54 41.524 119.87 41.0362 119.516C38.1548 117.419 35.4598 115.032 33.0255 112.419C32.6645 112.027 32.081 111.938 31.6123 112.196C31.5238 112.247 22.4323 117.168 20.0483 113.064C17.5757 108.801 24.7351 103.064 24.8068 103.005C25.2516 102.653 25.3783 102.029 25.101 101.534C21.7843 95.5749 19.6178 89.1329 18.6613 82.3872C18.5944 81.9257 18.2596 81.5455 17.81 81.4283C14.4575 80.5483 5.00014 77.136 5.49513 73.1522C5.99968 69.0703 14.5388 67.1382 17.7861 66.7389C18.3003 66.6743 18.7092 66.2797 18.7905 65.7704C19.7183 59.8903 21.5763 54.2303 24.3142 48.9456C24.5964 48.4028 24.4075 47.7309 23.879 47.4176C22.406 46.5448 18.36 43.5151 19.0344 41.1334C19.307 40.1697 20.12 39.3687 21.4471 38.7493C22.6571 38.1874 23.5897 37.152 24.0034 35.9061C24.4123 34.6746 24.2999 33.3619 23.6829 32.2117C22.3749 29.7726 21.2726 26.4512 23.4558 24.4832C26.7318 21.5324 35.1298 28.1657 37.8128 30.7195C38.2289 31.1189 38.8769 31.15 39.3289 30.7913C45.0057 26.3172 51.3855 23.0388 58.2962 21.0469C58.7004 20.9298 59.0088 20.6046 59.1021 20.1957C60.3647 14.7627 63.2772 6.88598 65.8071 6.37425C67.1462 6.10404 67.6795 6.82381 68.7029 9.28201C69.4131 10.9894 70.219 12.9215 72.1822 13.2252C74.2937 13.548 75.3793 11.9148 76.178 10.7191C77.1919 9.20071 77.6534 8.70811 78.8873 9.13136C81.3622 9.98025 83.7893 15.8268 84.7363 19.3133C84.851 19.7318 85.1858 20.0522 85.6091 20.143C89.3824 20.9632 93.0793 22.1828 96.5944 23.7706C96.9555 23.9308 97.3764 23.8997 97.7088 23.6797C102.161 20.7456 109.495 17.0057 111.836 17.8642C112.257 18.0196 112.331 18.1894 112.355 18.2444C112.621 18.8518 112.001 20.3439 111.504 21.5419C110.657 23.5769 109.698 25.882 111.133 27.5081C112.702 29.2872 114.861 28.4431 116.294 27.8835C118.132 27.1637 118.309 27.2857 118.56 27.7329C119.524 29.445 118.446 35.4757 117.374 39.2085C117.272 39.5647 117.346 39.9521 117.575 40.2439C122.898 47.0446 126.605 55.0959 128.293 63.5274C128.4 64.0702 128.879 64.46 129.429 64.46C129.436 64.46 129.445 64.46 129.453 64.46C129.534 64.4552 137.2 64.3907 137.652 68.1808C138.056 71.5716 132.176 75.6199 129.876 76.8945Z"
-                                    fill="white"></path>
-                                <mask id="mask0_1543_1651" style="mask-type:luminance" maskUnits="userSpaceOnUse"
-                                    x="129" y="10" width="17" height="18">
-                                    <path d="M129.261 10.064H146V27.2044H129.261V10.064Z" fill="white"></path>
-                                </mask>
-                                <g mask="url(#mask0_1543_1651)">
+                                <svg width="146" height="151" viewBox="0 0 146 151" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <path
-                                        d="M137.848 10.6599C133.415 10.6599 129.806 14.2683 129.806 18.7017C129.806 23.1374 133.415 26.7434 137.848 26.7434C142.284 26.7434 145.89 23.1374 145.89 18.7017C145.892 14.2683 142.284 10.6599 137.848 10.6599ZM137.848 24.4287C134.692 24.4287 132.124 21.8605 132.124 18.7041C132.124 15.5452 134.692 12.977 137.848 12.977C141.005 12.977 143.575 15.5452 143.575 18.7041C143.575 21.8605 141.007 24.4287 137.848 24.4287Z"
+                                        d="M73.9753 30.9032C73.8199 30.8721 73.6621 30.8721 73.5067 30.9032C56.3136 34.4494 43.7643 43.0555 35.1439 57.2117C35.0315 57.3934 34.9741 57.6015 34.9741 57.8143C34.9741 89.2807 48.2145 111.981 73.258 123.459C73.411 123.531 73.576 123.566 73.741 123.566C73.906 123.566 74.071 123.531 74.224 123.459C99.27 111.981 112.508 89.2831 112.508 57.8143C112.508 57.6015 112.448 57.3934 112.338 57.2117C103.72 43.0555 91.1708 34.4494 73.9753 30.9032ZM73.741 121.132C49.9768 110.027 37.3821 88.2644 37.2936 58.1395C45.5171 44.7916 57.4447 36.635 73.741 33.2203C90.0397 36.6374 101.967 44.7916 110.191 58.1395C110.1 88.2644 97.5076 110.027 73.741 121.132Z"
                                         fill="white"></path>
-                                </g>
-                                <mask id="mask1_1543_1651" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0"
-                                    y="13" width="18" height="19">
-                                    <path d="M0 13.7363H17.8483V31.4889H0V13.7363Z" fill="white"></path>
-                                </mask>
-                                <g mask="url(#mask1_1543_1651)">
                                     <path
-                                        d="M8.71848 31.2954C13.5273 31.2954 17.4394 27.3857 17.4394 22.5769C17.4394 17.7705 13.5273 13.8608 8.71848 13.8608C3.91208 13.8608 0 17.7705 0 22.5769C0 27.3833 3.91208 31.2954 8.71848 31.2954ZM8.71848 16.178C12.2504 16.178 15.1222 19.0475 15.1222 22.5793C15.1222 26.1088 12.2504 28.9807 8.71848 28.9807C5.189 28.9807 2.31712 26.1064 2.31712 22.5769C2.31712 19.0475 5.189 16.178 8.71848 16.178Z"
+                                        d="M95.009 65.0844H81.6611V51.7365C81.6611 51.098 81.1446 50.5791 80.5037 50.5791H66.9812C66.3404 50.5791 65.8215 51.098 65.8215 51.7365V65.0844H52.4759C51.8351 65.0844 51.3162 65.6033 51.3162 66.2418V79.7643C51.3162 80.4051 51.8351 80.924 52.4759 80.924H65.8215V94.2696C65.8215 94.9104 66.3404 95.4293 66.9812 95.4293H80.5037C81.1446 95.4293 81.6611 94.9104 81.6611 94.2696V80.924H95.009C95.6499 80.924 96.1664 80.4051 96.1664 79.7643V66.2418C96.1664 65.6033 95.6475 65.0844 95.009 65.0844ZM93.8493 78.6069H80.5037C79.8629 78.6069 79.344 79.1234 79.344 79.7643V93.1122H68.1386V79.7643C68.1386 79.1234 67.6197 78.6069 66.9812 78.6069H53.6333V67.4015H66.9812C67.6197 67.4015 68.1386 66.8826 68.1386 66.2442V52.8962H79.344V66.2418C79.344 66.8826 79.8629 67.4015 80.5037 67.4015H93.8493V78.6069Z"
                                         fill="white"></path>
-                                </g>
-                                <path
-                                    d="M46.4044 14.5383C49.3074 14.5383 51.67 12.1734 51.67 9.27041C51.67 6.36743 49.3074 4.00488 46.4044 4.00488C43.5015 4.00488 41.1389 6.36743 41.1389 9.27041C41.1389 12.1758 43.4991 14.5383 46.4044 14.5383ZM46.4044 6.322C48.0305 6.322 49.3528 7.64436 49.3528 9.27041C49.3528 10.8965 48.0305 12.2212 46.4044 12.2212C44.7784 12.2212 43.4536 10.8965 43.4536 9.27041C43.4536 7.64436 44.7784 6.322 46.4044 6.322Z"
-                                    fill="white"></path>
-                                <circle cx="138" cy="127" r="4" fill="white"></circle>
-                                <circle cx="37.5" cy="144.5" r="6.5" fill="white"></circle>
-                                <circle cx="7.5" cy="126.5" r="2.5" fill="white"></circle>
-                                <circle cx="47.5" cy="8.5" r="6.5" fill="white"></circle>
-                                <circle cx="25" cy="3" r="3" fill="white"></circle>
-                                <circle cx="142" cy="44" r="2" fill="white"></circle>
-                                <circle cx="115" cy="140" r="2" fill="white"></circle>
-                                <ellipse cx="138.5" cy="19" rx="6.5" ry="7" fill="white"></ellipse>
-                                <circle cx="8.5" cy="22.5" r="8.5" fill="white"></circle>
-                            </svg>
+                                    <path
+                                        d="M130.373 62.1596C128.575 53.8955 124.921 46.0139 119.756 39.2754C120.581 36.5781 122.109 29.3183 120.583 26.5994C119.254 24.2369 116.872 25.1694 115.449 25.7266C113.888 26.3388 113.297 26.4583 112.872 25.9777C112.393 25.4373 113.087 23.7706 113.644 22.4315C114.378 20.6596 115.141 18.8303 114.479 17.3166C114.151 16.5681 113.534 16.0205 112.64 15.6929C108.649 14.2199 99.7748 19.5954 96.9675 21.3984C93.6915 19.9637 90.2696 18.8326 86.7784 18.0292C86.0538 15.614 83.5574 8.28247 79.6381 6.93859C76.6108 5.896 75.1928 8.02421 74.253 9.43266C73.4352 10.6546 73.0933 11.0204 72.5385 10.9344C71.8594 10.8291 71.3429 9.58809 70.8431 8.39007C70.0181 6.40773 68.7651 3.40672 65.3504 4.10257C60.8118 5.02081 57.8563 15.5662 57.0074 19.0096C50.3717 21.0063 44.2118 24.1508 38.6785 28.3642C35.8663 25.8486 26.7557 18.3879 21.9063 22.7615C20.0841 24.4019 18.5609 27.5607 21.6408 33.3045C21.9541 33.8903 22.0115 34.5527 21.8058 35.1744C21.5882 35.8248 21.1148 36.3509 20.4715 36.6498C18.5059 37.5657 17.272 38.8617 16.8057 40.5021C15.7655 44.1679 19.8378 47.4798 21.7843 48.8213C19.3165 53.7974 17.5901 59.0845 16.6431 64.5604C13.501 65.0578 3.91691 67.0425 3.19714 72.8676C2.44868 78.9294 13.2715 82.533 16.4805 83.4632C17.4801 89.9053 19.5437 96.0747 22.6236 101.826C20.5552 103.686 15.151 109.234 18.0468 114.227C21.0861 119.463 29.3096 115.944 31.9399 114.638C34.0777 116.864 36.3996 118.925 38.8602 120.783C37.8272 122.84 35.8544 127.747 39.0084 130.272C42.3825 132.972 47.8154 128.84 49.6854 127.24C53.1025 128.801 56.675 130.028 60.3264 130.894C60.0538 133.474 59.8984 139.744 64.5207 141.284C67.7823 142.372 70.1018 140.076 71.9694 138.235C73.5978 136.628 74.6643 135.667 75.7978 135.961C76.9527 136.252 77.2684 137.051 77.7227 138.44C78.1842 139.851 78.8586 141.91 81.5392 141.908C81.8333 141.908 82.1537 141.884 82.5004 141.831C87.2447 141.097 89.8009 132.627 90.4824 129.999C96.6279 128.151 102.391 125.3 107.623 121.525C110.026 120.702 114.268 119.605 115.921 120.016C116.624 120.188 117.135 120.59 117.728 121.054C118.948 122.013 120.466 123.211 123.666 122.108C126.684 121.068 126.435 117.639 126.232 114.882C126.083 112.833 125.928 110.714 126.877 109.781C127.664 109.007 128.721 109.059 130.376 109.243C132.516 109.475 135.457 109.8 136.691 105.805C138.331 100.496 131.299 94.0947 128.96 92.1482C130.356 87.7651 131.229 83.2145 131.552 78.6018C133.711 77.3177 140.543 72.8413 139.955 67.9058C139.371 63.0253 132.886 62.2696 130.373 62.1596ZM129.876 76.8945C129.52 77.0906 129.302 77.4516 129.276 77.8414C128.986 82.7363 128.056 87.5594 126.509 92.1793C126.351 92.6432 126.507 93.1573 126.894 93.4586C129.4 95.4147 135.648 101.323 134.477 105.123C133.831 107.206 132.891 107.184 130.624 106.938C128.955 106.754 126.877 106.529 125.249 108.127C123.537 109.815 123.74 112.593 123.919 115.049C124.12 117.792 124.151 119.487 122.91 119.918C120.904 120.604 120.249 120.088 119.158 119.231C118.458 118.682 117.661 118.057 116.475 117.763C114.146 117.189 107.819 118.734 106.418 119.571L106.401 119.547C101.169 123.347 95.3797 126.18 89.1935 127.962C88.7894 128.079 88.4809 128.404 88.3877 128.813C87.4814 132.728 84.9826 139.1 82.1441 139.54C80.6568 139.772 80.4583 139.351 79.9227 137.718C79.454 136.291 78.8131 134.332 76.3669 133.713C76.0273 133.627 75.7021 133.589 75.3841 133.589C73.3754 133.589 71.7757 135.167 70.341 136.585C68.361 138.538 67.0339 139.679 65.25 139.086C61.479 137.828 62.7416 130.281 62.7535 130.207C62.8659 129.593 62.4714 129 61.8616 128.866C57.7678 127.976 53.7696 126.618 49.9771 124.822C49.5515 124.621 49.0421 124.7 48.6954 125.023C46.8015 126.781 42.2916 129.937 40.4528 128.462C38.1022 126.582 41.3136 121.109 41.3471 121.054C41.6579 120.54 41.524 119.87 41.0362 119.516C38.1548 117.419 35.4598 115.032 33.0255 112.419C32.6645 112.027 32.081 111.938 31.6123 112.196C31.5238 112.247 22.4323 117.168 20.0483 113.064C17.5757 108.801 24.7351 103.064 24.8068 103.005C25.2516 102.653 25.3783 102.029 25.101 101.534C21.7843 95.5749 19.6178 89.1329 18.6613 82.3872C18.5944 81.9257 18.2596 81.5455 17.81 81.4283C14.4575 80.5483 5.00014 77.136 5.49513 73.1522C5.99968 69.0703 14.5388 67.1382 17.7861 66.7389C18.3003 66.6743 18.7092 66.2797 18.7905 65.7704C19.7183 59.8903 21.5763 54.2303 24.3142 48.9456C24.5964 48.4028 24.4075 47.7309 23.879 47.4176C22.406 46.5448 18.36 43.5151 19.0344 41.1334C19.307 40.1697 20.12 39.3687 21.4471 38.7493C22.6571 38.1874 23.5897 37.152 24.0034 35.9061C24.4123 34.6746 24.2999 33.3619 23.6829 32.2117C22.3749 29.7726 21.2726 26.4512 23.4558 24.4832C26.7318 21.5324 35.1298 28.1657 37.8128 30.7195C38.2289 31.1189 38.8769 31.15 39.3289 30.7913C45.0057 26.3172 51.3855 23.0388 58.2962 21.0469C58.7004 20.9298 59.0088 20.6046 59.1021 20.1957C60.3647 14.7627 63.2772 6.88598 65.8071 6.37425C67.1462 6.10404 67.6795 6.82381 68.7029 9.28201C69.4131 10.9894 70.219 12.9215 72.1822 13.2252C74.2937 13.548 75.3793 11.9148 76.178 10.7191C77.1919 9.20071 77.6534 8.70811 78.8873 9.13136C81.3622 9.98025 83.7893 15.8268 84.7363 19.3133C84.851 19.7318 85.1858 20.0522 85.6091 20.143C89.3824 20.9632 93.0793 22.1828 96.5944 23.7706C96.9555 23.9308 97.3764 23.8997 97.7088 23.6797C102.161 20.7456 109.495 17.0057 111.836 17.8642C112.257 18.0196 112.331 18.1894 112.355 18.2444C112.621 18.8518 112.001 20.3439 111.504 21.5419C110.657 23.5769 109.698 25.882 111.133 27.5081C112.702 29.2872 114.861 28.4431 116.294 27.8835C118.132 27.1637 118.309 27.2857 118.56 27.7329C119.524 29.445 118.446 35.4757 117.374 39.2085C117.272 39.5647 117.346 39.9521 117.575 40.2439C122.898 47.0446 126.605 55.0959 128.293 63.5274C128.4 64.0702 128.879 64.46 129.429 64.46C129.436 64.46 129.445 64.46 129.453 64.46C129.534 64.4552 137.2 64.3907 137.652 68.1808C138.056 71.5716 132.176 75.6199 129.876 76.8945Z"
+                                        fill="white"></path>
+                                    <mask id="mask0_1543_1651" style="mask-type:luminance" maskUnits="userSpaceOnUse"
+                                        x="129" y="10" width="17" height="18">
+                                        <path d="M129.261 10.064H146V27.2044H129.261V10.064Z" fill="white"></path>
+                                    </mask>
+                                    <g mask="url(#mask0_1543_1651)">
+                                        <path
+                                            d="M137.848 10.6599C133.415 10.6599 129.806 14.2683 129.806 18.7017C129.806 23.1374 133.415 26.7434 137.848 26.7434C142.284 26.7434 145.89 23.1374 145.89 18.7017C145.892 14.2683 142.284 10.6599 137.848 10.6599ZM137.848 24.4287C134.692 24.4287 132.124 21.8605 132.124 18.7041C132.124 15.5452 134.692 12.977 137.848 12.977C141.005 12.977 143.575 15.5452 143.575 18.7041C143.575 21.8605 141.007 24.4287 137.848 24.4287Z"
+                                            fill="white"></path>
+                                    </g>
+                                    <mask id="mask1_1543_1651" style="mask-type:luminance" maskUnits="userSpaceOnUse"
+                                        x="0" y="13" width="18" height="19">
+                                        <path d="M0 13.7363H17.8483V31.4889H0V13.7363Z" fill="white"></path>
+                                    </mask>
+                                    <g mask="url(#mask1_1543_1651)">
+                                        <path
+                                            d="M8.71848 31.2954C13.5273 31.2954 17.4394 27.3857 17.4394 22.5769C17.4394 17.7705 13.5273 13.8608 8.71848 13.8608C3.91208 13.8608 0 17.7705 0 22.5769C0 27.3833 3.91208 31.2954 8.71848 31.2954ZM8.71848 16.178C12.2504 16.178 15.1222 19.0475 15.1222 22.5793C15.1222 26.1088 12.2504 28.9807 8.71848 28.9807C5.189 28.9807 2.31712 26.1064 2.31712 22.5769C2.31712 19.0475 5.189 16.178 8.71848 16.178Z"
+                                            fill="white"></path>
+                                    </g>
+                                    <path
+                                        d="M46.4044 14.5383C49.3074 14.5383 51.67 12.1734 51.67 9.27041C51.67 6.36743 49.3074 4.00488 46.4044 4.00488C43.5015 4.00488 41.1389 6.36743 41.1389 9.27041C41.1389 12.1758 43.4991 14.5383 46.4044 14.5383ZM46.4044 6.322C48.0305 6.322 49.3528 7.64436 49.3528 9.27041C49.3528 10.8965 48.0305 12.2212 46.4044 12.2212C44.7784 12.2212 43.4536 10.8965 43.4536 9.27041C43.4536 7.64436 44.7784 6.322 46.4044 6.322Z"
+                                        fill="white"></path>
+                                    <circle cx="138" cy="127" r="4" fill="white"></circle>
+                                    <circle cx="37.5" cy="144.5" r="6.5" fill="white"></circle>
+                                    <circle cx="7.5" cy="126.5" r="2.5" fill="white"></circle>
+                                    <circle cx="47.5" cy="8.5" r="6.5" fill="white"></circle>
+                                    <circle cx="25" cy="3" r="3" fill="white"></circle>
+                                    <circle cx="142" cy="44" r="2" fill="white"></circle>
+                                    <circle cx="115" cy="140" r="2" fill="white"></circle>
+                                    <ellipse cx="138.5" cy="19" rx="6.5" ry="7" fill="white"></ellipse>
+                                    <circle cx="8.5" cy="22.5" r="8.5" fill="white"></circle>
+                                </svg>
                             </div>
-                            <p>Без сонливості, сухості в роті, запаморочення та без довгострокового навантаження на імунну
+                            <p>Без сонливості, сухості в роті, запаморочення та без довгострокового навантаження на
+                                імунну
                                 систему.</p>
                         </div>
                     </div>
 
                     <div class="comfort-benefits__dots" data-comfort-dots>
-                        <button class="comfort-benefits__dot is-active" type="button" aria-label="Показати перший пункт"></button>
+                        <button class="comfort-benefits__dot is-active" type="button"
+                            aria-label="Показати перший пункт"></button>
                         <button class="comfort-benefits__dot" type="button" aria-label="Показати другий пункт"></button>
                         <button class="comfort-benefits__dot" type="button" aria-label="Показати третій пункт"></button>
                     </div>
@@ -2176,7 +2203,7 @@
     </section>
 
 
-    <section class="discover-whisker">
+    <section class="discover-whisker discover-whisker--animated">
         <div class="discover-whisker__bg"></div>
         <div class="container">
             <div class="discover-whisker__card">
@@ -2202,37 +2229,39 @@
                         <p>WhiskerBlock™ від pettiko став першою у своєму роді технологією, що націлена на Fel d 1
                             — білок, який лежить в основі котячих алергій. Його унікальна формула нейтралізує
                             алерген, переводячи його в безпечну, нереактивну форму.</p>
+                        <div class="discover-whisker__image is-active" style="margin-top: 20px;">
+                            <img alt="Meet WhiskerBlock™" decoding="async" loading="lazy" sizes="100%"
+                                src="https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=100&amp;crop=center"
+                                srcset="https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=200&amp;crop=center 200w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=400&amp;crop=center 400w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=600&amp;crop=center 600w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=800&amp;crop=center 800w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=1000&amp;crop=center 1000w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=1200&amp;crop=center 1200w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=1400&amp;crop=center 1400w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=1600&amp;crop=center 1600w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=1800&amp;crop=center 1800w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=2000&amp;crop=center 2000w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=2200&amp;crop=center 2200w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=2400&amp;crop=center 2400w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=2600&amp;crop=center 2600w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=2800&amp;crop=center 2800w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=3000&amp;crop=center 3000w"
+                                width="100">
+                        </div>
                     </div>
                     <div class="discover-whisker__text">
                         <p>На відміну від підходів, що впливають на вашу імунну систему, WhiskerBlock™ націлюється
                             на алергени прямо в джерелі — у вашому середовищі. Завдяки своїй точності він
                             зв’язується лише з алергенами й не чіпає нічого зайвого.</p>
+                        <div class="discover-whisker__image" style="margin-top: 20px;">
+                            <video autoplay="" loop="" muted="" playsinline="" preload="auto">
+                                <source src="./assets/video/allergen.mp4" type="video/mp4">
+                            </video>
+                        </div>
                     </div>
                     <div class="discover-whisker__text">
                         <p>Додавання WhiskerBlock™ у спрей дозволяє широко покривати житловий простір і діяти на Fel
                             d 1 по всьому дому. Завдяки точним дослідженням і виробництву формула здатна
                             нейтралізувати до 98% Fel d 1, досягаючи оптимальної ефективності вже протягом кількох
                             годин.</p>
+                        <div class="discover-whisker__image" style="margin-top: 20px;">
+                            <img alt="The Effectiveness Of WhiskerBlock™" decoding="async" loading="lazy" sizes="100%"
+                                src="https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=100&amp;crop=center"
+                                srcset="https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=200&amp;crop=center 200w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=400&amp;crop=center 400w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=600&amp;crop=center 600w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=800&amp;crop=center 800w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=1000&amp;crop=center 1000w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=1200&amp;crop=center 1200w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=1400&amp;crop=center 1400w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=1600&amp;crop=center 1600w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=1800&amp;crop=center 1800w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=2000&amp;crop=center 2000w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=2200&amp;crop=center 2200w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=2400&amp;crop=center 2400w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=2600&amp;crop=center 2600w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=2800&amp;crop=center 2800w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=3000&amp;crop=center 3000w"
+                                width="100">
+                        </div>
                     </div>
 
-                    <div class="discover-whisker__image is-active">
-                        <img alt="Meet WhiskerBlock™" decoding="async" loading="lazy" sizes="100%"
-                            src="https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=100&amp;crop=center"
-                            srcset="https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=200&amp;crop=center 200w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=400&amp;crop=center 400w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=600&amp;crop=center 600w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=800&amp;crop=center 800w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=1000&amp;crop=center 1000w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=1200&amp;crop=center 1200w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=1400&amp;crop=center 1400w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=1600&amp;crop=center 1600w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=1800&amp;crop=center 1800w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=2000&amp;crop=center 2000w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=2200&amp;crop=center 2200w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=2400&amp;crop=center 2400w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=2600&amp;crop=center 2600w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=2800&amp;crop=center 2800w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/wb-cat-landscape.png?v=1763281747&amp;width=3000&amp;crop=center 3000w"
-                            width="100">
-                    </div>
-                    <div class="discover-whisker__image">
-                        <video autoplay="" loop="" playsinline="">
-                            <source src="https://cdn.shopify.com/videos/c/o/v/001f4e0827584682a600029fdf59f060.mov"
-                                type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="discover-whisker__image">
-                        <img alt="The Effectiveness Of WhiskerBlock™" decoding="async" loading="lazy" sizes="100%"
-                            src="https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=100&amp;crop=center"
-                            srcset="https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=200&amp;crop=center 200w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=400&amp;crop=center 400w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=600&amp;crop=center 600w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=800&amp;crop=center 800w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=1000&amp;crop=center 1000w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=1200&amp;crop=center 1200w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=1400&amp;crop=center 1400w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=1600&amp;crop=center 1600w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=1800&amp;crop=center 1800w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=2000&amp;crop=center 2000w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=2200&amp;crop=center 2200w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=2400&amp;crop=center 2400w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=2600&amp;crop=center 2600w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=2800&amp;crop=center 2800w, https://cdn.shopify.com/s/files/1/0814/8369/4394/files/allwbs.png?v=1763282025&amp;width=3000&amp;crop=center 3000w"
-                            width="100">
-                    </div>
+
+
+
                 </div>
             </div>
         </div>
