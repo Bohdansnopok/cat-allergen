@@ -4,6 +4,10 @@
     padding-left: 20px;
     padding-right: 20px;
   }
+
+  .footer-pages {
+    padding: 0 10px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -419,6 +423,14 @@
       line-height: 1;
       white-space: nowrap;
     }
+  }
+
+  .wrapp > .banner__right__choose-product__pack__top-line__discount {
+    display: none;
+  }
+
+  .banner__right__choose-product__pack__top-line__meta .banner__right__choose-product__pack__top-line__discount {
+    display: flex;
   }
 
   .banner__right__choose-product {
@@ -2018,4 +2030,21 @@
   }
 
 }
+
+@media (min-width: 1201px) {
+  header {
+    justify-content: flex-start;
+  }
+
+  .banner__right__choose-product__pack__top-line__meta {
+    order: 1;
+  }
+
+  .banner__right__choose-product__pack__top-line__discount {
+    order: 2;
+  }
+
+  .banner__right__choose-product__pack__top-line__price {
+    order: 3;
+  }
 }

@@ -92,8 +92,6 @@ header {
     }
   }
 
-  
-
   .banner__left__top__right__card__content {
     margin-top: 6px;
     font-size: 10px;
@@ -405,6 +403,10 @@ header {
       white-space: nowrap;
       font-weight: 500;
     }
+  }
+
+  .banner__right__choose-product__pack__top-line__meta .banner__right__choose-product__pack__top-line__discount {
+    display: none;
   }
 
   .banner__right__choose-product__pack__top-line__meta {
@@ -1993,8 +1995,6 @@ header {
     position: relative;
   }
 
- 
-
   h1 {
     margin-bottom: 18px;
     text-align: center;
@@ -2012,8 +2012,10 @@ header {
     width: min(1380px, 100%);
     isolation: isolate;
     background-color: #faf4f3;
-    box-shadow: inset var(--community-fade-shadow) 0 72px -58px rgba(255, 255, 255, 0.96),
-      inset calc(var(--community-fade-shadow) * -1) 0 72px -58px rgba(255, 255, 255, 0.96);
+    box-shadow:
+      inset var(--community-fade-shadow) 0 72px -58px rgba(255, 255, 255, 0.96),
+      inset calc(var(--community-fade-shadow) * -1) 0 72px -58px
+        rgba(255, 255, 255, 0.96);
   }
 
   .community-carousel__viewport::before,
@@ -3564,7 +3566,10 @@ header {
     border-radius: 12px;
     padding: 0 12px;
     margin-top: 0;
-    transition: max-height 0.28s ease, opacity 0.28s ease, padding 0.28s ease;
+    transition:
+      max-height 0.28s ease,
+      opacity 0.28s ease,
+      padding 0.28s ease;
 
     p {
       font-family: "Montserrat", sans-serif;
@@ -4115,5 +4120,50 @@ header {
 
   .customer-reviews-list .customer-reviews-list__summary-score p {
     font-size: 22px;
+  }
+}
+
+.footer-pages {
+  padding-bottom: 100px;
+
+  .footer-pages__logo__wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #ececec;
+    width: 100%;
+    margin-bottom: 100px;
+
+    img {
+      display: block;
+    }
+  }
+
+  .footer-pages__container {
+    max-width: 613px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+
+  .footer-pages__title {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .footer-pages__content {
+    font-size: 16px;
+  }
+
+  ul {
+    /* Прибираємо стандартні відступи браузера */
+    list-style-position: outside;
+    padding-left: 1rem;
+    margin-left: 0;
+    margin-top: 10px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
   }
 }
