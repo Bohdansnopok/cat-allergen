@@ -66,6 +66,24 @@ body.is-page-locked {
   flex-direction: column;
 }
 
+.product-pack__stack {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.product-pack__qty {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
 h1 {
   font-family: "Domine", serif;
   font-size: 36px;

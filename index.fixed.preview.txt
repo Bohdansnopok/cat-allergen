@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/media.css">
+    <title>Cat allergen neutralizing</title>
+</head>
+
+<body>
+    <header class="header">
+        <a href="./index.html" class="header__logo-wrapp">
+            <img src="./assets/img/Logo Main.png" alt="pettiko">
+        </a>
+    </header>
+
+    <section class="banner">
+        <div class="container flex-row-start">
+            <div class="banner__left">
+                <div class="banner__left__top flex-row-start">
+                    <div class="banner__hero-cat-wrap">
+                        <img src="./assets/img/herocat.png" alt="" class="banner__hero-cat banner__img" width="573"
+                            height="675" id="hero-image">
+                    </div>
+                    <!-- Mobile Slider -->
+                    <div class="mobile-slider" id="mobile-slider">
+                        <div class="slider-main">
+                            <img src="./assets/img/herocat.png" alt="" class="slider-main-img" id="slider-main-img">
+                        </div>
+                        <div class="slider-thumbnails">
+                            <div class="thumbnails-container">
+                                <img src="./assets/img/herocat.png" alt="" class="thumbnail active"
+                                    data-src="./assets/img/herocat.png" data-fit="contain" data-position="center center"
+                                    data-scale="1">
+                                <img src="./assets/img/relief.png" alt="" class="thumbnail"
+                                    data-src="./assets/img/relief.png" data-fit="contain" data-position="center top"
+                                    data-scale="1">
+                                <img src="./assets/img/feedbacks.png" alt="" class="thumbnail"
+                                    data-src="./assets/img/feedbacks.png" data-fit="contain"
+                                    data-position="center center" data-scale="1">
+                                <img src="./assets/img/how-to-use.png" alt="" class="thumbnail"
+                                    data-src="./assets/img/how-to-use.png" data-fit="cover" data-position="54% 0%"
+                                    data

@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+  initHeaderScrollState();
   initFeedbackSlider();
   initBannerRightScrollGate();
   initStoryModal();
@@ -18,6 +19,18 @@ document.addEventListener('DOMContentLoaded', function () {
   initUseStepsShowcase();
   initMobileSlider();
 });
+
+function initHeaderScrollState() {
+  const header = document.querySelector('.header');
+  if (!header) return;
+
+  const syncHeaderState = () => {
+    header.classList.toggle('is-scrolled', window.scrollY > 12);
+  };
+
+  syncHeaderState();
+  window.addEventListener('scroll', syncHeaderState, { passive: true });
+}
 
 let lockedScrollY = 0;
 
@@ -124,11 +137,13 @@ function initFeedbackSlider() {
 
 function initBannerRightScrollGate() {
   const banner = document.querySelector('.banner');
+  const leftColumn = banner?.querySelector('.banner__left');
   const rightColumn = document.querySelector('.banner__right__scroll');
   const compactViewport = window.matchMedia('(max-width: 800px)');
 
-  if (!banner || !rightColumn || compactViewport.matches) return;
+  if (!banner || !leftColumn || !rightColumn || compactViewport.matches) return;
   let isGateEngaged = false;
+  let lockedPageScrollY = 0;
 
   const canScrollRightColumn = (deltaY) => {
     const maxScrollTop = rightColumn.scrollHeight - rightColumn.clientHeight;
@@ -150,14 +165,12 @@ function initBannerRightScrollGate() {
     return rect.top < window.innerHeight && rect.bottom > 0;
   };
 
-  const isInBannerCenterZone = () => {
-    const bannerTop = banner.offsetTop;
-    const bannerHeight = banner.offsetHeight;
-    const viewportMidpoint = window.scrollY + window.innerHeight / 2;
-    const centerZoneStart = bannerTop + bannerHeight * 0.38;
-    const centerZoneEnd = bannerTop + bannerHeight * 0.62;
+  const hasReachedLeftColumnBottom = () => {
+    const leftRect = leftColumn.getBoundingClientRect();
+    const leftBottom = window.scrollY + leftRect.bottom;
+    const viewportBottom = window.scrollY + window.innerHeight;
 
-    return viewportMidpoint >= centerZoneStart && viewportMidpoint <= centerZoneEnd;
+    return viewportBottom >= leftBottom;
   };
 
   const syncGate = () => {
@@ -169,6 +182,10 @@ function initBannerRightScrollGate() {
 
     if (!isBannerInView()) {
       isGateEngaged = false;
+    }
+
+    if (isGateEngaged && Math.abs(window.scrollY - lockedPageScrollY) > 1) {
+      window.scrollTo(0, lockedPageScrollY);
     }
 
     rightColumn.classList.toggle('is-scroll-locked', !isGateEngaged);
@@ -195,7 +212,12 @@ function initBannerRightScrollGate() {
     if (nextDirection === 0) return;
 
     const canScrollNow = canScrollRightColumn(event.deltaY);
-    const shouldEngageNow = isInBannerCenterZone() && canScrollNow;
+    const shouldEngageNow =
+      canScrollNow &&
+      (
+        (event.deltaY > 0 && hasReachedLeftColumnBottom()) ||
+        (event.deltaY < 0 && rightColumn.scrollTop > 1)
+      );
 
     if (!isGateEngaged && !shouldEngageNow) {
       syncGate();
@@ -209,6 +231,7 @@ function initBannerRightScrollGate() {
     }
 
     isGateEngaged = true;
+    lockedPageScrollY = window.scrollY;
     rightColumn.scrollTop += event.deltaY;
     syncGate();
     event.preventDefault();
@@ -341,11 +364,19 @@ function initPackSelector() {
   const yourPackVariants = {
     '1': document.querySelector('#your-pack-variant-1'),
     '2': document.querySelector('#your-pack-variant-2'),
-    '6': document.querySelector('#your-pack-variant-6'),
   };
   let currentQty = null;
   let variantAnimationTimeout = null;
   if (packs.length === 0) return;
+
+  const getInactiveSubtitle = (pack) => {
+    const savings = pack.dataset.inactiveSavings;
+    if (savings) {
+      return `Заощадьте ${savings} грн`;
+    }
+
+    return pack.dataset.inactiveSubtitle || '';
+  };
 
   Object.values(yourPackVariants).forEach((variant) => {
     if (!variant) return;
@@ -384,7 +415,7 @@ function initPackSelector() {
       if (subtitle) {
         subtitle.textContent = isActive
           ? pack.dataset.activeSubtitle || ''
-          : pack.dataset.inactiveSubtitle || '';
+          : getInactiveSubtitle(pack);
       }
 
       if (isActive && submitPrice) {
@@ -466,7 +497,44 @@ function initPackSelector() {
 
 function initAccordions() {
   const accordions = Array.from(document.querySelectorAll('.banner__right__accordions__accordion'));
+  const rightColumn = document.querySelector('.banner__right__scroll');
   if (accordions.length === 0) return;
+
+  const revealAccordionContent = (accordion, answer) => {
+    if (!rightColumn) return;
+    const trigger = accordion.querySelector('.banner__right__accordions__accordion__question');
+    if (!trigger) return;
+
+    const centerAccordionInView = () => {
+      rightColumn.classList.remove('is-scroll-locked');
+
+      const columnRect = rightColumn.getBoundingClientRect();
+      const triggerRect = trigger.getBoundingClientRect();
+      const triggerCenter = triggerRect.top + triggerRect.height / 2;
+      const columnCenter = columnRect.top + columnRect.height / 2;
+      const nextScrollTop = rightColumn.scrollTop + (triggerCenter - columnCenter);
+      const maxScrollTop = Math.max(0, rightColumn.scrollHeight - rightColumn.clientHeight);
+      const targetScrollTop = Math.min(maxScrollTop, Math.max(0, nextScrollTop));
+
+      rightColumn.scrollTo({
+        top: targetScrollTop,
+        behavior: 'smooth'
+      });
+    };
+
+    centerAccordionInView();
+    requestAnimationFrame(centerAccordionInView);
+    setTimeout(centerAccordionInView, 180);
+    setTimeout(centerAccordionInView, 320);
+
+    const handleTransitionEnd = (event) => {
+      if (event.propertyName !== 'max-height') return;
+      centerAccordionInView();
+      answer.removeEventListener('transitionend', handleTransitionEnd);
+    };
+
+    answer.addEventListener('transitionend', handleTransitionEnd);
+  };
 
   accordions.forEach((accordion, index) => {
     const trigger = accordion.querySelector('.banner__right__accordions__accordion__question');
@@ -475,7 +543,9 @@ function initAccordions() {
     if (!trigger || !answer) return;
 
     const answerId = `banner-accordion-answer-${index + 1}`;
+    const triggerId = `banner-accordion-trigger-${index + 1}`;
 
+    trigger.id = triggerId;
     trigger.setAttribute('aria-expanded', 'false');
     trigger.setAttribute('aria-controls', answerId);
     answer.id = answerId;
@@ -501,7 +571,11 @@ function initAccordions() {
       accordion.classList.add('is-open');
       trigger.setAttribute('aria-expanded', 'true');
       answer.hidden = false;
-      answer.style.maxHeight = `${answer.scrollHeight}px`;
+      // Р вЂ”Р Р…РЎвЂ“Р СР В°РЎвЂќР СР С• hidden, Р С—Р С•РЎвЂљРЎвЂ“Р С Р В±Р ВµРЎР‚Р ВµР СР С• scrollHeight РІР‚вЂќ РЎвЂљР ВµР С—Р ВµРЎР‚ Р В±РЎС“Р Т‘Р Вµ РЎвЂљР С•РЎвЂЎР Р…Р С‘Р в„– РЎР‚Р С•Р В·Р СРЎвЂ“РЎР‚
+      requestAnimationFrame(() => {
+        answer.style.maxHeight = `${answer.scrollHeight}px`;
+        requestAnimationFrame(() => revealAccordionContent(accordion, answer));
+      });
     });
   });
 }
@@ -1167,3 +1241,6 @@ function initMobileSlider() {
   // Initial setup
   updateSlider(0);
 }
+
+
+
