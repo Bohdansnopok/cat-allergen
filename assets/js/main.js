@@ -710,6 +710,63 @@ function initCommunityCarousel() {
 function initReviewAccordion() {
   const items = Array.from(document.querySelectorAll('.review-slider__item'));
   if (items.length === 0) return;
+  const mobileViewport = window.matchMedia('(max-width: 640px)');
+
+  const syncOpenPanelHeight = () => {
+    const openItem = items.find((item) => item.classList.contains('is-open'));
+    if (!openItem) return;
+
+    const panel = openItem.querySelector('.review-slider__panel');
+    if (!panel) return;
+    panel.style.maxHeight = `${panel.scrollHeight}px`;
+  };
+
+  const initMobileCardSlider = (item) => {
+    const panel = item.querySelector('.review-slider__panel');
+    const cards = item.querySelector('.review-slider__cards');
+    if (!panel || !cards || cards.dataset.mobileSliderInit === 'true') return;
+
+    cards.dataset.mobileSliderInit = 'true';
+
+    const slides = Array.from(cards.querySelectorAll('.review-slider__card'));
+    if (slides.length <= 1) return;
+
+    const dots = document.createElement('div');
+    dots.className = 'review-slider__mobile-dots';
+    dots.setAttribute('aria-label', 'Перемикання відгуків');
+
+    const updateDots = () => {
+      const slideWidth = cards.clientWidth || 1;
+      const activeIndex = Math.min(
+        slides.length - 1,
+        Math.max(0, Math.round(cards.scrollLeft / slideWidth))
+      );
+
+      dots.querySelectorAll('.review-slider__mobile-dot').forEach((dot, index) => {
+        dot.classList.toggle('is-active', index === activeIndex);
+        dot.setAttribute('aria-current', index === activeIndex ? 'true' : 'false');
+      });
+    };
+
+    slides.forEach((_, index) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = `review-slider__mobile-dot${index === 0 ? ' is-active' : ''}`;
+      dot.setAttribute('aria-label', `Показати відгук ${index + 1}`);
+      dot.setAttribute('aria-current', index === 0 ? 'true' : 'false');
+      dot.addEventListener('click', () => {
+        cards.scrollTo({
+          left: cards.clientWidth * index,
+          behavior: 'smooth',
+        });
+      });
+      dots.appendChild(dot);
+    });
+
+    cards.addEventListener('scroll', updateDots, { passive: true });
+    panel.appendChild(dots);
+    updateDots();
+  };
 
   const setOpenItem = (nextItem) => {
     items.forEach((item) => {
@@ -734,6 +791,10 @@ function initReviewAccordion() {
     const panel = item.querySelector('.review-slider__panel');
     if (!trigger || !panel) return;
 
+    if (mobileViewport.matches) {
+      initMobileCardSlider(item);
+    }
+
     trigger.setAttribute('aria-expanded', item.classList.contains('is-open') ? 'true' : 'false');
     panel.style.maxHeight = item.classList.contains('is-open') ? `${panel.scrollHeight}px` : '0px';
 
@@ -751,12 +812,11 @@ function initReviewAccordion() {
   setOpenItem(defaultItem);
 
   window.addEventListener('resize', () => {
-    const openItem = items.find((item) => item.classList.contains('is-open'));
-    if (!openItem) return;
+    if (mobileViewport.matches) {
+      items.forEach((item) => initMobileCardSlider(item));
+    }
 
-    const panel = openItem.querySelector('.review-slider__panel');
-    if (!panel) return;
-    panel.style.maxHeight = `${panel.scrollHeight}px`;
+    syncOpenPanelHeight();
   });
 }
 
@@ -895,8 +955,6 @@ function initDiscoverTabs() {
   const panels = Array.from(document.querySelectorAll('[data-discover-panels] .discover-whisker__text'));
   const images = Array.from(document.querySelectorAll('[data-discover-panels] .discover-whisker__image'));
   const contentContainer = document.querySelector('[data-discover-panels]');
-  const section = document.querySelector('.discover-whisker');
-  const enableDropdownAnimation = section?.classList.contains('discover-whisker--animated');
 
   if (tabs.length === 0 || panels.length === 0 || !contentContainer) return;
 
@@ -911,49 +969,67 @@ function initDiscoverTabs() {
     }
   };
 
-  const animatePanelOpenFromTab = (panel, tab) => {
-    if (!panel?.animate || !tab) return;
-
-    const tabRect = tab.getBoundingClientRect();
-    const panelRect = panel.getBoundingClientRect();
-    const yOffset = tabRect.bottom - panelRect.top;
-
-    panel.animate([
-      { transform: `translateY(${yOffset}px) scaleY(0.9)`, opacity: 0 },
-      { transform: 'translateY(0) scaleY(1)', opacity: 1 }
-    ], {
-      duration: 280,
-      easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
-      fill: 'forwards'
+  const syncPanelHeights = () => {
+    panels.forEach((panel) => {
+      panel.style.setProperty('--discover-panel-height', `${panel.scrollHeight}px`);
     });
+  };
+
+  const schedulePanelHeightSync = () => {
+    requestAnimationFrame(syncPanelHeights);
+    setTimeout(syncPanelHeights, 120);
+    setTimeout(syncPanelHeights, 280);
+    setTimeout(syncPanelHeights, 480);
   };
 
   const setActiveTab = (index, animate = true) => {
     const selectedTab = tabs[index];
     if (!selectedTab) return;
 
-    tabs.forEach((tab, tabIndex) => tab.classList.toggle('is-active', tabIndex === index));
-    panels.forEach((panel, panelIndex) => panel.classList.toggle('is-active', panelIndex === index));
-    images.forEach((image, imageIndex) => image.classList.toggle('is-active', imageIndex === index));
-
     moveContentUnderTab(selectedTab);
 
-    if (enableDropdownAnimation && animate) {
-      const selectedPanel = panels[index];
-      if (selectedPanel) {
-        requestAnimationFrame(() => animatePanelOpenFromTab(selectedPanel, selectedTab));
+    tabs.forEach((tab, tabIndex) => tab.classList.toggle('is-active', tabIndex === index));
+    panels.forEach((panel, panelIndex) => {
+      const isActive = panelIndex === index;
+      panel.classList.toggle('is-active', isActive);
+      panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+
+      if (!animate) {
+        panel.style.transition = 'none';
+        requestAnimationFrame(() => {
+          panel.style.transition = '';
+        });
       }
-    }
+    });
+    images.forEach((image, imageIndex) => image.classList.toggle('is-active', imageIndex === index));
+
+    schedulePanelHeightSync();
   };
 
   tabs.forEach((tab, index) => {
     tab.addEventListener('click', () => setActiveTab(index));
   });
 
+  panels.forEach((panel) => {
+    panel.querySelectorAll('img').forEach((image) => {
+      if (image.complete) return;
+      image.addEventListener('load', schedulePanelHeightSync, { passive: true });
+      image.addEventListener('error', schedulePanelHeightSync, { passive: true });
+    });
+
+    panel.querySelectorAll('video').forEach((video) => {
+      video.addEventListener('loadeddata', schedulePanelHeightSync, { passive: true });
+      video.addEventListener('loadedmetadata', schedulePanelHeightSync, { passive: true });
+    });
+  });
+
   const defaultIndex = Math.max(0, tabs.findIndex((tab) => tab.classList.contains('is-active')));
   setActiveTab(defaultIndex, false);
 
-  window.addEventListener('resize', () => setActiveTab(tabs.findIndex((tab) => tab.classList.contains('is-active'))));
+  window.addEventListener('resize', () => {
+    syncPanelHeights();
+    setActiveTab(tabs.findIndex((tab) => tab.classList.contains('is-active')), false);
+  });
 }
 
 function initLeaderTabs() {

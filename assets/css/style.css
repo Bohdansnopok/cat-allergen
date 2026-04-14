@@ -3,10 +3,10 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
+  position: relative;
+  top: auto;
+  left: auto;
+  z-index: 10;
 
   .header__logo-wrapp {
     background-color: rgba(18, 105, 228, 0.4);
@@ -30,6 +30,11 @@
 }
 
 header.is-scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
   .header__logo-wrapp {
     background-color: rgba(18, 105, 228, 0.28);
     backdrop-filter: blur(16px);
@@ -73,36 +78,37 @@ header.is-scrolled {
   }
 
   .banner__left__top__right__card {
-    padding: 18px 13px 13px;
     background-color: #fff;
     border: 1px solid #7d90ad;
     font-family: "Montserrat", sans-serif;
-    width: 138px;
-    height: 134px;
+    width: 136px;
+    height: 131px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding: 16px 12px 8px;
     margin-left: auto;
 
     h1 {
       font-family: "Montserrat", sans-serif;
       font-weight: 600;
-      font-size: 36px;
+      font-size: 42px;
       line-height: 1;
       letter-spacing: -0.03em;
       color: #173867;
     }
 
     .number-wrapp.flex-row {
-      align-items: end;
+      align-items: center;
       justify-content: center;
+      gap: 2px;
 
       span {
-        margin-bottom: 3px;
+        margin-bottom: -15px;
         margin-left: 2px;
-        font-size: 12px;
+        font-size: 16px;
         font-weight: 500;
         letter-spacing: 0;
         color: #173867;
@@ -110,22 +116,33 @@ header.is-scrolled {
     }
   }
 
+  .banner__left__top__right__card__number {
+    width: 100%;
+  }
+
   .banner__left__top__right__card__content {
-    margin-top: 6px;
-    font-size: 10px;
-    line-height: 1.18;
+    font-size: 12px;
+    line-height: 1.16;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.01em;
     color: #173867;
+    margin: 0;
+    margin-top: auto;
   }
 
   .banner__left__top__right__card__content.heart {
-    margin-top: -5px;
+    margin-top: auto;
   }
 
   .banner__left__bottom {
     padding-top: 10px;
+    display: grid;
+    grid-template-columns: minmax(0, 0.45fr) minmax(0, 0.55fr);
+    align-items: start;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
   }
 
   .banner__left__bottom__left,
@@ -137,6 +154,29 @@ header.is-scrolled {
   .banner__left__bottom__left,
   .banner__left__bottom__right {
     align-items: center;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .banner__left__bottom__left img,
+  .banner__left__bottom__right > img,
+  .banner__left__bottom__right .preview-trigger,
+  .banner__left__bottom__right .preview__img {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+  }
+
+  .banner__left__bottom__left img {
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  .banner__left__bottom__right > img {
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
   }
 
   .banner__left__bottom__right {
@@ -150,8 +190,10 @@ header.is-scrolled {
 
     .preview__img {
       display: block;
-      height: 565px;
-      width: 380px;
+      height: auto;
+      width: 100%;
+      aspect-ratio: 380 / 565;
+      object-fit: cover;
       border-radius: 12px;
     }
 
@@ -1405,7 +1447,7 @@ header.is-scrolled {
 .clinican-reviewed {
   color: black;
   padding-top: 54px;
-  padding-bottom: 96px;
+  padding-bottom: 84px;
 
   h1 {
     text-align: center;
@@ -1425,21 +1467,21 @@ header.is-scrolled {
     font-size: 16px;
     line-height: 1.5;
     color: rgba(33, 33, 33, 0.72);
-    max-width: 1040px;
+    max-width: 980px;
     margin-inline: auto;
-    white-space: nowrap;
+    white-space: normal;
   }
 
   .clinican-reviewed__list {
-    margin-top: 56px;
-    max-width: 1040px;
+    margin-top: 52px;
+    max-width: 980px;
     margin-inline: auto;
   }
 
   .clinican-reviewed__card {
     display: grid;
-    grid-template-columns: 336px minmax(0, 1fr);
-    gap: 56px;
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 52px;
     padding: 42px 0 40px;
     align-items: start;
   }
@@ -1449,18 +1491,18 @@ header.is-scrolled {
   }
 
   .clinican-reviewed__card-meta {
-    gap: 22px;
+    gap: 18px;
   }
 
   .clinican-reviewed__doctor {
     align-items: flex-start;
-    gap: 16px;
+    gap: 14px;
   }
 
   .clinican-reviewed__avatar {
-    width: 46px;
-    height: 46px;
-    flex: 0 0 46px;
+    width: 50px;
+    height: 50px;
+    flex: 0 0 50px;
     border-radius: 50%;
     background: #f3eee8;
     border: 1px solid rgba(33, 33, 33, 0.1);
@@ -1468,7 +1510,7 @@ header.is-scrolled {
     align-items: center;
     justify-content: center;
     font-family: "Montserrat", sans-serif;
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 500;
     color: #45413c;
   }
@@ -1482,10 +1524,10 @@ header.is-scrolled {
 
     h3 {
       margin: 0;
-      font-size: 17px;
+      font-size: 16px;
       line-height: 1.3;
       text-decoration: underline;
-      text-decoration-thickness: 1px;
+      text-decoration-thickness: 0.8px;
       text-underline-offset: 2px;
       font-weight: 500;
       color: #212121;
@@ -1493,10 +1535,10 @@ header.is-scrolled {
   }
 
   .clinican-reviewed__verified {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.3;
     color: rgba(33, 33, 33, 0.6);
-    gap: 7px;
+    gap: 8px;
   }
 
   .clinican-reviewed__facts {
@@ -1506,12 +1548,12 @@ header.is-scrolled {
 
   .clinican-reviewed__fact {
     display: grid;
-    grid-template-columns: minmax(120px, 1fr) auto;
-    gap: 18px;
-    padding: 15px 0;
+    grid-template-columns: minmax(100px, 1fr) auto;
+    gap: 14px;
+    padding: 12px 0;
     border-top: 1px solid rgba(33, 33, 33, 0.12);
-    font-size: 16px;
-    line-height: 1.45;
+    font-size: 14px;
+    line-height: 1.35;
 
     &:first-child {
       border-top: 0;
@@ -1531,9 +1573,9 @@ header.is-scrolled {
 
   .clinican-reviewed__card-content {
     h3 {
-      margin: 0 0 16px;
+      margin: 0 0 14px;
       font-size: 17px;
-      line-height: 1.2;
+      line-height: 1.25;
       font-weight: 600;
       color: #212121;
     }
@@ -1541,17 +1583,17 @@ header.is-scrolled {
     p {
       margin: 0;
       max-width: 700px;
-      font-size: 17px;
+      font-size: 16px;
       line-height: 1.5;
       color: rgba(33, 33, 33, 0.78);
     }
   }
 
   .clinican-reviewed__highlights-label {
-    margin-top: 24px;
-    margin-bottom: 14px;
-    font-size: 16px;
-    line-height: 1.35;
+    margin-top: 22px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    line-height: 1.3;
     font-weight: 500;
     color: #2f2a26;
   }
@@ -1570,8 +1612,8 @@ header.is-scrolled {
       border: 0;
       border-radius: 0;
       background: transparent;
-      font-size: 16px;
-      line-height: 1.35;
+      font-size: 15px;
+      line-height: 1.3;
       color: #3a3632;
     }
 
@@ -1579,16 +1621,17 @@ header.is-scrolled {
       content: "";
       width: 12px;
       height: 12px;
-      margin-right: 9px;
+      margin-right: 10px;
       border: 1px solid rgba(33, 33, 33, 0.48);
       border-radius: 999px;
       box-sizing: border-box;
     }
   }
 
+
   .clinican-reviewed__footer {
-    max-width: 1040px;
-    margin: 22px auto 0;
+    max-width: 980px;
+    margin: 28px auto 0;
     padding: 0;
   }
 
@@ -1692,28 +1735,29 @@ header.is-scrolled {
 
 .clinican-reviewed__top-line {
   align-items: center;
-  gap: 14px;
+  gap: 18px;
   justify-content: center;
-  margin-bottom: 38px;
-  max-width: 1040px;
+  margin-bottom: 46px;
+  max-width: 980px;
   margin-inline: auto;
 
   hr {
     display: block;
-    flex: 0 0 clamp(120px, 24vw, 320px);
-    width: clamp(120px, 24vw, 320px);
-    max-width: clamp(120px, 24vw, 320px);
+    flex: 0 0 clamp(130px, 18vw, 250px);
+    width: clamp(130px, 18vw, 250px);
+    max-width: clamp(130px, 18vw, 250px);
     margin: 0;
     height: 1px;
     border: 0;
     background-color: rgba(33, 33, 33, 0.72);
+    align-self: center;
   }
 
   .header--laurels-left,
   .header--laurels-right {
     display: inline-flex;
-    width: 18px;
-    height: 26px;
+    width: 22px;
+    height: 30px;
     flex: 0 0 auto;
     align-items: center;
     justify-content: center;
@@ -1721,8 +1765,8 @@ header.is-scrolled {
 
   .header--caduceus {
     display: inline-flex;
-    width: 24px;
-    height: 18px;
+    width: 28px;
+    height: 22px;
     flex: 0 0 auto;
     align-items: center;
     justify-content: center;
@@ -1731,11 +1775,13 @@ header.is-scrolled {
   h2 {
     margin: 0;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 400;
     line-height: 1;
     color: #212121;
     white-space: nowrap;
+    display: flex;
+    align-items: center;
   }
 
   .header--laurels-left svg,
@@ -2739,9 +2785,15 @@ header.is-scrolled {
       border-radius: 0;
     }
 
+    .relief-journey__intro h1 {
+      font-size: 34px !important;
+      line-height: 0.96 !important;
+      letter-spacing: -0.03em !important;
+    }
+
     .relief-journey__intro p,
     .relief-journey__list {
-      font-size: 14px;
+      font-size: 16px;
     }
 
     .relief-journey__timeline {
@@ -2766,17 +2818,19 @@ header.is-scrolled {
     }
 
     .relief-journey__step-head h3 {
-      font-size: 21px;
+      font-size: 18px;
     }
 
     .relief-journey__badge {
+      width: 92px;
       min-width: 92px;
       padding: 6px 14px;
       font-size: 11px;
+      text-align: center;
     }
 
     .relief-journey__cta {
-      width: 100%;
+      width: fit-content;
       text-align: center;
     }
   }
@@ -2951,6 +3005,10 @@ header.is-scrolled {
 
     .review-slider__inner {
       gap: 14px;
+      width: calc(100% - 20px);
+      max-width: calc(100% - 20px);
+      margin-inline: auto;
+      overflow: hidden;
     }
 
     h1 {
@@ -2958,30 +3016,63 @@ header.is-scrolled {
     }
 
     .review-slider__trigger {
-      justify-content: space-between;
-      gap: 12px;
-      padding: 22px 0;
+      display: block;
+      position: relative;
+      width: 100%;
+      gap: 0;
+      padding: 22px 44px 22px 0;
       font-size: 22px;
-    }
-
-    .review-slider__trigger span:first-child {
-      min-width: 0;
       text-align: left;
     }
 
+    .review-slider__trigger span:first-child {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      flex: 1 1 auto;
+      min-width: 0;
+      text-align: left;
+      overflow-wrap: anywhere;
+    }
+
     .review-slider__cards {
-      gap: 18px;
-      flex-direction: column;
+      display: flex;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      gap: 12px;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: stretch;
+      justify-content: flex-start;
+      overflow-x: auto;
+      overflow-y: hidden;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .review-slider__cards::-webkit-scrollbar {
+      display: none;
     }
 
     .review-slider__item.is-open .review-slider__panel {
+      width: 100%;
+      max-width: 100%;
       padding-bottom: 20px;
     }
 
     .review-slider__card {
+      flex: 0 0 100%;
+      min-width: 100%;
+      width: 100%;
       min-height: 308px;
       padding: 34px 20px 28px;
       border-radius: 16px;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
     }
 
     .review-slider__stars {
@@ -2991,6 +3082,36 @@ header.is-scrolled {
 
     .review-slider__card h3 {
       font-size: 20px;
+    }
+
+    .review-slider__icon {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      margin: 0;
+    }
+
+    .review-slider__mobile-dots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .review-slider__mobile-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 0;
+      background: #cfd7e3;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .review-slider__mobile-dot.is-active {
+      background: #2b63d9;
+      transform: scale(1.15);
     }
   }
 }
@@ -4160,7 +4281,6 @@ header.is-scrolled {
   .discover-whisker .discover-whisker__content,
   .discover-whisker .discover-whisker__tabs,
   .leaders-tabs .leaders-tabs__nav,
-  .review-slider .review-slider__cards,
   .comfort-benefits .comfort-benefits__items {
     flex-direction: column;
   }
@@ -4244,6 +4364,77 @@ header.is-scrolled {
 
   .customer-reviews-list .customer-reviews-list__summary-score p {
     font-size: 22px;
+  }
+
+  .leaders-tabs .container {
+    width: calc(100% - 20px);
+    max-width: calc(100% - 20px);
+    margin-inline: auto;
+  }
+
+  .leaders-tabs h1 {
+    font-size: 34px !important;
+    line-height: 0.96 !important;
+    letter-spacing: -0.03em !important;
+  }
+
+  .leaders-tabs .leaders-tabs__nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+    overflow: visible;
+    padding-bottom: 0;
+  }
+
+  .leaders-tabs .leaders-tabs__nav-item {
+    flex: 0 0 auto;
+    font-size: 14px;
+    line-height: 1.2;
+    text-underline-offset: 2px;
+    white-space: normal;
+  }
+
+  .leaders-tabs .leaders-tabs__panel {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .leaders-tabs .leaders-tabs__quote {
+    display: flex;
+    flex-direction: column;
+    order: 1;
+    width: 100%;
+    max-width: none;
+  }
+
+  .leaders-tabs .leaders-tabs__quote blockquote {
+    order: 1;
+    margin: 0;
+    text-align: left;
+  }
+
+  .leaders-tabs .leaders-tabs__quote p {
+    order: 2;
+    margin-top: 14px;
+    text-align: left;
+  }
+
+  .leaders-tabs .leaders-tabs__photo {
+    order: 2;
+    width: 240px;
+    height: 240px;
+    flex: 0 0 auto;
+    align-self: center;
+    border-radius: 16px;
+  }
+
+  .leaders-tabs .leaders-tabs__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
