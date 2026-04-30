@@ -141,9 +141,26 @@ function initBannerRightScrollGate() {
   const rightColumn = document.querySelector('.banner__right__scroll');
   const compactViewport = window.matchMedia('(max-width: 800px)');
 
-  if (!banner || !leftColumn || !rightColumn || compactViewport.matches) return;
+  if (!banner || !leftColumn || !rightColumn) return;
+
   let isGateEngaged = false;
   let lockedPageScrollY = 0;
+
+  // 🔥 ГОЛОВНИЙ ФІКС — СИНХРОН ВИСОТИ
+  const syncHeights = () => {
+    if (compactViewport.matches) {
+      rightColumn.style.height = '';
+      rightColumn.style.maxHeight = '';
+      rightColumn.style.overflow = '';
+      return;
+    }
+
+    const leftHeight = leftColumn.offsetHeight;
+
+    rightColumn.style.height = `${leftHeight}px`;
+    rightColumn.style.maxHeight = `${leftHeight}px`;
+    rightColumn.style.overflowY = 'auto';
+  };
 
   const canScrollRightColumn = (deltaY) => {
     const maxScrollTop = rightColumn.scrollHeight - rightColumn.clientHeight;
@@ -167,10 +184,7 @@ function initBannerRightScrollGate() {
 
   const hasReachedLeftColumnBottom = () => {
     const leftRect = leftColumn.getBoundingClientRect();
-    const leftBottom = window.scrollY + leftRect.bottom;
-    const viewportBottom = window.scrollY + window.innerHeight;
-
-    return viewportBottom >= leftBottom;
+    return leftRect.bottom <= window.innerHeight;
   };
 
   const syncGate = () => {
@@ -191,16 +205,19 @@ function initBannerRightScrollGate() {
     rightColumn.classList.toggle('is-scroll-locked', !isGateEngaged);
   };
 
+  // 🔥 ІНІТ
+  syncHeights();
   syncGate();
+
+  window.addEventListener('resize', () => {
+    syncHeights();
+    syncGate();
+  });
+
   window.addEventListener('scroll', syncGate, { passive: true });
-  window.addEventListener('resize', syncGate);
 
   window.addEventListener('wheel', (event) => {
-    if (compactViewport.matches) {
-      isGateEngaged = false;
-      rightColumn.classList.remove('is-scroll-locked');
-      return;
-    }
+    if (compactViewport.matches) return;
 
     if (!isBannerInView()) {
       isGateEngaged = false;
@@ -208,15 +225,13 @@ function initBannerRightScrollGate() {
       return;
     }
 
-    const nextDirection = Math.sign(event.deltaY);
-    if (nextDirection === 0) return;
-
     const canScrollNow = canScrollRightColumn(event.deltaY);
+
     const shouldEngageNow =
       canScrollNow &&
       (
         (event.deltaY > 0 && hasReachedLeftColumnBottom()) ||
-        (event.deltaY < 0 && rightColumn.scrollTop > 1)
+        (event.deltaY < 0 && rightColumn.scrollTop > 0)
       );
 
     if (!isGateEngaged && !shouldEngageNow) {
@@ -232,7 +247,9 @@ function initBannerRightScrollGate() {
 
     isGateEngaged = true;
     lockedPageScrollY = window.scrollY;
+
     rightColumn.scrollTop += event.deltaY;
+
     syncGate();
     event.preventDefault();
   }, { passive: false });
